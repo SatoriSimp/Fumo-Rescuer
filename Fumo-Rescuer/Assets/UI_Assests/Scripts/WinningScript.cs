@@ -10,7 +10,7 @@ public class WinningScript : MonoBehaviour
     public CanvasGroup canvasGroup;
     public TMP_Text textMeshPro;
 
-    private bool preventUpdate = false;
+    public bool preventUpdate = false;
 
     // Start is called before the first frame update
     private void Start()

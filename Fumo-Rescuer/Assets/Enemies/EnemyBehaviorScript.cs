@@ -46,13 +46,24 @@ abstract public class EnemyBehaviorScript : MonoBehaviour
 
     public virtual void TakeDamage(int P_Damage, int M_Damage, int T_Damage, PlayerBehaviorScript player)
     {
-        if (!player) return;
-
-        int damage = (int) (
-            P_Damage * (1 - Mathf.Max(Mathf.Min(def * (1 - player.defPen * 0.01f) - player.defIgn, 950), 0) * 0.001f) 
-            + M_Damage * (1 - Mathf.Max(Mathf.Min(res * (1 - player.resPen * 0.01f) - player.resIgn, 900), 0) * 0.001f) 
+        int damage;
+        
+        if (player)
+        {
+            damage = (int)(
+            P_Damage * (1 - Mathf.Max(Mathf.Min(def * (1 - player.defPen * 0.01f) - player.defIgn, 950), 0) * 0.001f)
+            + M_Damage * (1 - Mathf.Max(Mathf.Min(res * (1 - player.resPen * 0.01f) - player.resIgn, 900), 0) * 0.001f)
             + T_Damage
-        );
+            );
+        }
+        else
+        {
+            damage = (int)(
+            P_Damage * (1 - Mathf.Max(Mathf.Min(def, 950), 0) * 0.001f)
+            + M_Damage * (1 - Mathf.Max(Mathf.Min(res, 900), 0) * 0.001f)
+            + T_Damage
+            );
+        }
 
         currentHealth -= damage;
         healthBar.setHealth(currentHealth);
@@ -69,11 +80,43 @@ abstract public class EnemyBehaviorScript : MonoBehaviour
 
     public virtual void TakeDamage(int P_Damage, int M_Damage, int T_Damage, EnemyBehaviorScript player)
     {
-        if (!player) return;
+        int damage;
 
-        int damage = (int)(
+        if (player)
+        {
+            damage = (int)(
             P_Damage * (1 - Mathf.Max(Mathf.Min(def * (1 - player.defPen * 0.01f) - player.defIgn, 950), 0) * 0.001f)
             + M_Damage * (1 - Mathf.Max(Mathf.Min(res * (1 - player.resPen * 0.01f) - player.resIgn, 900), 0) * 0.001f)
+            + T_Damage
+            );
+        }
+        else
+        {
+            damage = (int)(
+            P_Damage * (1 - Mathf.Max(Mathf.Min(def, 950), 0) * 0.001f)
+            + M_Damage * (1 - Mathf.Max(Mathf.Min(res, 900), 0) * 0.001f)
+            + T_Damage
+            );
+        }
+
+        currentHealth -= damage;
+        healthBar.setHealth(currentHealth);
+        if (currentHealth <= 0)
+        {
+            animator.SetTrigger("die");
+            this.enabled = false;
+            hitbox.enabled = false;
+            playerInRange.enabled = false;
+            healthBar.enabled = false;
+            Destroy(gameObject, 5);
+        }
+    }
+
+    public virtual void TakeDamage(int P_Damage, int M_Damage, int T_Damage)
+    {
+        int damage = (int)(
+            P_Damage * (1 - Mathf.Max(Mathf.Min(def, 950), 0) * 0.001f)
+            + M_Damage * (1 - Mathf.Max(Mathf.Min(res, 900), 0) * 0.001f)
             + T_Damage
         );
 
@@ -134,5 +177,10 @@ abstract public class EnemyBehaviorScript : MonoBehaviour
                 DealDamage(0, 0, damage, player);
                 break;
         }
+    }
+    public virtual void Heal(int healAmount)
+    {
+        currentHealth = Mathf.Min(currentHealth + healAmount, maxHealth);
+        healthBar.setHealth(currentHealth);
     }
 }

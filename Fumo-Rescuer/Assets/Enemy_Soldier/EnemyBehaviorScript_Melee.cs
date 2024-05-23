@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Linq;
-using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EnemyBehaviorScript_Melee : EnemyBehaviorScript
 {
@@ -15,11 +12,6 @@ public class EnemyBehaviorScript_Melee : EnemyBehaviorScript
     public bool isMenuShowcasseObject = false;
 
     public new SpriteRenderer renderer;
-
-    public EnemyBehaviorScript_Melee()
-    {
-        damageType = E_DamageType.PHYSIC;
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -47,15 +39,7 @@ public class EnemyBehaviorScript_Melee : EnemyBehaviorScript
         playerInRange.enabled = 
             (validTargets != null && validTargets.Length > 0) || playerDetected;
 
-        if (movementDisabledCountdown <= 0 && playerDetected)
-        {
-            isFacingRight = (
-                playerDetected
-                && playerDetected.position.x > transform.position.x
-            );
-        }
-
-        renderer.flipX = isFacingRight;
+        FlipSprite();
 
         if (!startAttacking)
         {
@@ -92,7 +76,7 @@ public class EnemyBehaviorScript_Melee : EnemyBehaviorScript
             }
         }
 
-        if (timeSinceLastAttack >= attackSpeed) 
+        if (timeSinceLastAttack >= attackSpeed)
         {
             if (validTargets.Length > 0)
             {
@@ -111,10 +95,21 @@ public class EnemyBehaviorScript_Melee : EnemyBehaviorScript
                 StartCoroutine(MoveToTarget(transform.position, new Vector2(transform.position.x - moveDistance, transform.position.y), moveTime));
             else
                 StartCoroutine(MoveToTarget(transform.position, playerDetected.position, Mathf.Max(Vector2.Distance(transform.position, playerDetected.position) / Mathf.Abs(moveDistance), 1)));
-
         }
     }
 
+    void FlipSprite()
+    {
+        if (movementDisabledCountdown <= 0 && playerDetected)
+        {
+            isFacingRight = (
+                playerDetected
+                && playerDetected.position.x > transform.position.x
+            );
+        }
+
+        renderer.flipX = isFacingRight;
+    }
     void damageFindTargets()
     {
         targetsInRange = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerMask);

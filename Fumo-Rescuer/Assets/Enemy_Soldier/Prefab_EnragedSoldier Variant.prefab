@@ -145,16 +145,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9057359072987328507, guid: 34a7b7857b690734ca0628f46521b4e0, type: 3}
+      propertyPath: def
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 9057359072987328507, guid: 34a7b7857b690734ca0628f46521b4e0, type: 3}
+      propertyPath: res
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 9057359072987328507, guid: 34a7b7857b690734ca0628f46521b4e0, type: 3}
       propertyPath: moveTime
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 9057359072987328507, guid: 34a7b7857b690734ca0628f46521b4e0, type: 3}
       propertyPath: maxHealth
-      value: 300
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 9057359072987328507, guid: 34a7b7857b690734ca0628f46521b4e0, type: 3}
       propertyPath: attackRange
-      value: 75
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 9057359072987328507, guid: 34a7b7857b690734ca0628f46521b4e0, type: 3}
       propertyPath: attackSpeed

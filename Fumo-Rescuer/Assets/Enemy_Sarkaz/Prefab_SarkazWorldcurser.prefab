@@ -372,8 +372,8 @@ GameObject:
   - component: {fileID: 3218101114152681005}
   - component: {fileID: 9028374973556321740}
   - component: {fileID: 7923572037907585334}
-  - component: {fileID: 7023925104950320660}
   - component: {fileID: -4403500473792088491}
+  - component: {fileID: 8113038099509450059}
   m_Layer: 6
   m_Name: Prefab_SarkazWorldcurser
   m_TagString: Enemies
@@ -483,7 +483,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.08847612, y: -0.3000865}
@@ -528,33 +528,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4244310745313952929}
   m_CullTransparentMesh: 1
---- !u!50 &7023925104950320660
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4244310745313952929}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &-4403500473792088491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -569,7 +542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 300
   currentHealth: 0
-  attackDamage: 45
+  attackDamage: 35
   damageType: 2
   attackSpeed: 5
   timeSinceLastAttack: 5
@@ -582,6 +555,13 @@ MonoBehaviour:
   resIgn: 0
   def: 100
   res: 550
+  numberOfMoves: 50
+  moveCooldown: 15
+  moveTime: 5
+  moveDistance: 50
+  timeSinceLastMovement: 0
+  startAttacking: 0
+  movementDisabledCountdown: 0
   animator: {fileID: 9028374973556321740}
   hitbox: {fileID: 3218101114152681005}
   attackPoint: {fileID: 7299768124286519768}
@@ -589,13 +569,37 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   healthBar: {fileID: 6132345151269604380}
-  rb: {fileID: 7023925104950320660}
+  rb: {fileID: 0}
   playerInRange: {fileID: 720101042646689033}
-  numberOfMoves: 50
-  moveCooldown: 15
-  moveTime: 5
-  moveDistance: 50
+  playerDetected: {fileID: 0}
   renderer: {fileID: 7650174181095295946}
+--- !u!50 &8113038099509450059
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4244310745313952929}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8358200935872177163
 GameObject:
   m_ObjectHideFlags: 0

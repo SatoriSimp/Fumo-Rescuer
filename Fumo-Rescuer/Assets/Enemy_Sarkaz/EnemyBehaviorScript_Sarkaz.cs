@@ -97,6 +97,7 @@ public class EnemyBehaviorScript_Sarkaz : EnemyBehaviorScript
     {
         foreach (Collider2D target in targets)
         {
+            if (!target) continue;
             DealDamage(attackDamage, target.GetComponent<PlayerBehaviorScript>());
         }
         attackAnimationStart = 0f;
