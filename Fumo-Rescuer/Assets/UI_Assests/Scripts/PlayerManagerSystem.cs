@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerManagementSystem : MonoBehaviour
 {
@@ -75,6 +69,13 @@ public class PlayerManagementSystem : MonoBehaviour
 
         StartCoroutine(mainCamera.GetComponent<CameraMovement>()
             .SwitchLockingIntoNewPlayer(Prefab_NewPlayer.GetComponent<PlayerBehaviorScript>()));
+
+        GameObject[] getEnemies = GameObject.FindGameObjectsWithTag("Enemies");
+        foreach (GameObject enObj in getEnemies)
+        {
+            EnemyBehaviorScript enemy = enObj.GetComponent<EnemyBehaviorScript>();
+            if (enemy.playerDetected) enemy.playerDetected = NewPlayer.transform;
+        }
 
         Destroy(currentPlayer.gameObject);
         currentPlayer = Prefab_NewPlayer.GetComponent<PlayerBehaviorScript>();

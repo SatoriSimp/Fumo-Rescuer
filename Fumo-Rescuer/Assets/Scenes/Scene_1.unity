@@ -129,7 +129,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2015991449}
+    m_TransformParent: {fileID: 1044339706}
     m_Modifications:
     - target: {fileID: 964962769192562285, guid: 85e7d60dd6c5c884e9a694d5eefb0ebc, type: 3}
       propertyPath: m_text
@@ -150,15 +150,16 @@ PrefabInstance:
 
         Melee unit
         has short attack range, but fast movespeed and attack speed, attack deals
-        physical damage to all enemies in range with a low interval. Skill heals
-        them for a certain amount of HP.
+        physical damage to all enemies in range with a low interval. On skill use,
+        heal self for a certain amount of HP, gain increased ATK, RES, movespeed
+        and greatly increased DEF. Lasts 7 seconds, 18 seconds CD
 
 
-        Ranged unit has long attack range,
-        but moves and attack much slower, their attack deals magical damage to one
-        enemy and has a long wind-up time. On skill use, movement is restricted,
-        attack speed signifcantly increased and attack up to 4 targets within range
-        simultaneously (lasts 5 seconds).
+        Ranged
+        unit has long attack range, but moves and attack much slower, their attack
+        deals magical damage to one enemy and has a long wind-up time. On skill use,
+        movement is restricted, attack speed signifcantly increased and attack up
+        to 4 targets within range simultaneously. Lasts 5 seconds, 25 seconds CD.
 
 
 '
@@ -197,23 +198,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6869978342977295888, guid: 85e7d60dd6c5c884e9a694d5eefb0ebc, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 296.17
+      value: 277.8405
       objectReference: {fileID: 0}
     - target: {fileID: 6869978342977295888, guid: 85e7d60dd6c5c884e9a694d5eefb0ebc, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 139.6102
+      value: 164.0495
       objectReference: {fileID: 0}
     - target: {fileID: 6869978342977295888, guid: 85e7d60dd6c5c884e9a694d5eefb0ebc, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.1559693
+      value: 1.0518374
       objectReference: {fileID: 0}
     - target: {fileID: 6869978342977295888, guid: 85e7d60dd6c5c884e9a694d5eefb0ebc, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.1559695
+      value: 1.0518374
       objectReference: {fileID: 0}
     - target: {fileID: 6869978342977295888, guid: 85e7d60dd6c5c884e9a694d5eefb0ebc, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.1559693
+      value: 1.0518374
       objectReference: {fileID: 0}
     - target: {fileID: 6869978342977295888, guid: 85e7d60dd6c5c884e9a694d5eefb0ebc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -225,7 +226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6869978342977295888, guid: 85e7d60dd6c5c884e9a694d5eefb0ebc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: -1.8198
       objectReference: {fileID: 0}
     - target: {fileID: 6869978342977295888, guid: 85e7d60dd6c5c884e9a694d5eefb0ebc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -245,11 +246,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6869978342977295888, guid: 85e7d60dd6c5c884e9a694d5eefb0ebc, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -882.4
+      value: -891.54297
       objectReference: {fileID: 0}
     - target: {fileID: 6869978342977295888, guid: 85e7d60dd6c5c884e9a694d5eefb0ebc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -543.5
+      value: -534.46277
       objectReference: {fileID: 0}
     - target: {fileID: 6869978342977295888, guid: 85e7d60dd6c5c884e9a694d5eefb0ebc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -319,6 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 181392894873857074, guid: 2b4eb7f4803303346b3a58e03aabd616, type: 3}
   spawnPoint: {fileID: 343203576}
+  displayTooltips: 0
 --- !u!61 &343203578
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -417,6 +419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 4244310745313952929, guid: 84d5ba41dfd6f3b48b8564ec39b110c8, type: 3}
   spawnPoint: {fileID: 525861697}
+  displayTooltips: 0
 --- !u!61 &525861696
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -657,6 +660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1979471699083001611, guid: 34a7b7857b690734ca0628f46521b4e0, type: 3}
   spawnPoint: {fileID: 960597442}
+  displayTooltips: 0
 --- !u!61 &960597441
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -889,6 +893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 4244310745313952929, guid: 84d5ba41dfd6f3b48b8564ec39b110c8, type: 3}
   spawnPoint: {fileID: 1006577339}
+  displayTooltips: 1
 --- !u!61 &1006577341
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -994,30 +999,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prefab_Player
       objectReference: {fileID: 0}
-    - target: {fileID: 7366748185658316091, guid: 85f9f5e80b1291d4c94e0768ba2ea325, type: 3}
-      propertyPath: def
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 7366748185658316091, guid: 85f9f5e80b1291d4c94e0768ba2ea325, type: 3}
-      propertyPath: attackSpeed
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 7366748185658316091, guid: 85f9f5e80b1291d4c94e0768ba2ea325, type: 3}
-      propertyPath: attackDamage
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 7366748185658316091, guid: 85f9f5e80b1291d4c94e0768ba2ea325, type: 3}
-      propertyPath: attackInterval
-      value: 0.25
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5675824461535608592, guid: 85f9f5e80b1291d4c94e0768ba2ea325, type: 3}
-      insertIndex: 0
+    - targetCorrespondingSourceObject: {fileID: 3918101023401494190, guid: 85f9f5e80b1291d4c94e0768ba2ea325, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1163265971}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85f9f5e80b1291d4c94e0768ba2ea325, type: 3}
+--- !u!224 &1044339706 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3918101023401494190, guid: 85f9f5e80b1291d4c94e0768ba2ea325, type: 3}
+  m_PrefabInstance: {fileID: 1042128462}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1053105657 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1338558387750035221, guid: ac79b4361fc178a47b7c413ac581cb04, type: 3}
@@ -1079,6 +1073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1979471699083001611, guid: 34a7b7857b690734ca0628f46521b4e0, type: 3}
   spawnPoint: {fileID: 1386928446}
+  displayTooltips: 1
 --- !u!61 &1386928448
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1308,6 +1303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 5165713183049459804, guid: 7fc2f2130756ab94f95cd62570a34a88, type: 3}
   spawnPoint: {fileID: 1833477726}
+  displayTooltips: 0
 --- !u!61 &1833477728
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1353,11 +1349,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 14.021606, y: 308.4638}
   m_EdgeRadius: 0
---- !u!224 &2015991449 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5675824461535608592, guid: 85f9f5e80b1291d4c94e0768ba2ea325, type: 3}
-  m_PrefabInstance: {fileID: 1042128462}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2032246349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1409,6 +1400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1979471699083001611, guid: 34a7b7857b690734ca0628f46521b4e0, type: 3}
   spawnPoint: {fileID: 2032246350}
+  displayTooltips: 0
 --- !u!61 &2032246352
 BoxCollider2D:
   m_ObjectHideFlags: 0

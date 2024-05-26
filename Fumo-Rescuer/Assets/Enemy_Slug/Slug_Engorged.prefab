@@ -448,10 +448,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 903788ee54545474d9469f90fcb7a461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 2947424609478406388}
+  hitbox: {fileID: 0}
+  attackPoint: {fileID: 4148097811216239536}
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  healthBar: {fileID: 8126615032489152381}
+  rb: {fileID: 0}
+  playerInRange: {fileID: 5236394990012735798}
+  playerDetected: {fileID: 0}
+  renderer: {fileID: 5564867631841941497}
+  Tooltips: {fileID: 3313498525517500895, guid: bcbbe939034ef9743b6ee1880e4158ba, type: 3}
+  displayTooltipsOnSpawn: 0
   maxHealth: 140
   currentHealth: 0
-  attackDamage: 15
+  attackDamage: 10
   damageType: 2
+  attackPattern: 0
   attackSpeed: 0.3
   timeSinceLastAttack: 0
   attackInterval: 0.15
@@ -463,27 +477,17 @@ MonoBehaviour:
   resIgn: 0
   def: 0
   res: 0
-  numberOfMoves: 100
-  moveCooldown: 5
+  moveCooldown: 3
   moveTime: 4
   moveDistance: 300
   timeSinceLastMovement: 0
   startAttacking: 0
   movementDisabledCountdown: 0
-  animator: {fileID: 2947424609478406388}
-  hitbox: {fileID: 0}
-  attackPoint: {fileID: 4148097811216239536}
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  healthBar: {fileID: 8126615032489152381}
-  rb: {fileID: 0}
-  playerInRange: {fileID: 5236394990012735798}
-  playerDetected: {fileID: 0}
-  lifeStealRatio: 0.9
   isSentinel: 0
-  isMenuShowcasseObject: 0
-  renderer: {fileID: 5564867631841941497}
+  initialSpriteFlipped: 0
+  targetsInRange: []
+  validTargets: []
+  lifeStealRatio: 0.9
 --- !u!60 &6034552108696544156
 PolygonCollider2D:
   m_ObjectHideFlags: 0

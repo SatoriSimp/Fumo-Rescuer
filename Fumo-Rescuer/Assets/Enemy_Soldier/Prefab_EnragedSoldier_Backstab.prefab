@@ -105,6 +105,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9057359072987328507, guid: 34a7b7857b690734ca0628f46521b4e0, type: 3}
+      propertyPath: Tooltips
+      value: 
+      objectReference: {fileID: 1229250146874466269, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+    - target: {fileID: 9057359072987328507, guid: 34a7b7857b690734ca0628f46521b4e0, type: 3}
       propertyPath: moveTime
       value: 5
       objectReference: {fileID: 0}

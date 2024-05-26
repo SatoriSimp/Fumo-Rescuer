@@ -2,6 +2,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class PlayerBehaviorScript : MonoBehaviour
@@ -24,6 +25,10 @@ public class PlayerBehaviorScript : MonoBehaviour
     public float defPen, defIgn, resPen, resIgn;
     public float def = 100, res = 0;
 
+    public int baseAtk;
+    public float baseSpeed;
+    public float baseDef, baseRes;
+
     public float invulnerable = 0;
 
     private bool StartFunctionExecuted = false;
@@ -43,13 +48,16 @@ public class PlayerBehaviorScript : MonoBehaviour
     public bool isAttacking = false;
     public bool isFacingRight;
 
+    public Rigidbody2D rb;
     public Animator animator;
     public SpriteRenderer spriteRenderer;
     public Transform attackPoint;
     public LayerMask enemyLayer;
+
     public HealthBarScript healthBar;
-    public Rigidbody2D rb;
+
     public TMP_Text skillReady;
+    public GameObject SkillEffect;
 
     public virtual void Start()
     {
@@ -62,8 +70,14 @@ public class PlayerBehaviorScript : MonoBehaviour
         hitbox = gameObject.GetComponent<Collider2D>();
         damageType = GetCharacterDamageType();
         isFacingRight = true;
+
+        baseAtk = attackDamage;
+        baseDef = def;
+        baseRes = res;
+        baseSpeed = speed;
         currentHealth = maxHealth;
-        currentSpeed = speed;
+        currentSpeed = baseSpeed;
+
         healthBar.setMaxHealth(maxHealth);
         healthBar.setHealth(currentHealth);
     }
@@ -92,6 +106,7 @@ public class PlayerBehaviorScript : MonoBehaviour
     // Movement and handles player inputs
     public virtual void GetCharacterMovement()
     {
+        currentSpeed = speed;
         if (movementLockoutCountup < movementLockout) return;
 
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -165,7 +180,8 @@ public class PlayerBehaviorScript : MonoBehaviour
         {
             animator.SetTrigger("die");
             hitbox.enabled = false;
-            healthBar.enabled = false;
+            healthBar.Hide();
+            SkillEffect.SetActive(false);
             Destroy(gameObject, 5);
         }
     }
@@ -198,13 +214,13 @@ public class PlayerBehaviorScript : MonoBehaviour
         // Check if the character has collided with a terrain
         if (collision.gameObject.CompareTag("GameBorder"))
         {
-            currentSpeed = 0.5f;
+            speed = 0.5f;
         }
     }
 
     public void OnCollisionExit2D(Collision2D collision)
     {
-        currentSpeed = speed;
+        speed = baseSpeed;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

@@ -9580,6 +9580,120 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84d5ba41dfd6f3b48b8564ec39b110c8, type: 3}
+--- !u!1001 &1976553627
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 656931080610758876, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229250146874466269, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_Name
+      value: Soldier_Tooltips
+      objectReference: {fileID: 0}
+    - target: {fileID: 5090654795422406398, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -83
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393502698157406403, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_text
+      value: Melee unit. DEF is greatly increased. Immediately alert all of their
+        allies and increase their movespeed upon spotting the player.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393502698157406403, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_fontSize
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393502698157406403, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 19
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
 --- !u!224 &1981684455 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2621626581601513724, guid: 2b4eb7f4803303346b3a58e03aabd616, type: 3}
@@ -10485,3 +10599,4 @@ SceneRoots:
   - {fileID: 203904764}
   - {fileID: 164769048}
   - {fileID: 1939172896}
+  - {fileID: 1976553627}

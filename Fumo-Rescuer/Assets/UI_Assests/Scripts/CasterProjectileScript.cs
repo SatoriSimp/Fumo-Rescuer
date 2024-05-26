@@ -12,7 +12,7 @@ public class CasterProjectileScript : MonoBehaviour
     public void ShootTowards(Collider2D enemyCollider)
     {
         Target = enemyCollider;
-        Destroy(gameObject, 5);
+        Destroy(gameObject, 5); // force destroy to prevent projectile from stucking in the air
     }
 
     private void Update()

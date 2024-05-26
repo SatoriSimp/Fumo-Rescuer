@@ -386,10 +386,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fffd8d97396e0240afc5076b6547644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 3928554344375837195}
+  hitbox: {fileID: 2931441816638537174}
+  attackPoint: {fileID: 5839285335400379541}
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  healthBar: {fileID: 795730775692141531}
+  rb: {fileID: 2350042532507097380}
+  playerInRange: {fileID: 2559579224099692799}
+  playerDetected: {fileID: 0}
+  renderer: {fileID: 1132424934882912032}
+  Tooltips: {fileID: 1229250146874466269, guid: 24f0b67b493bb3f4cbe8a5a366034751, type: 3}
+  displayTooltipsOnSpawn: 0
   maxHealth: 250
   currentHealth: 0
   attackDamage: 45
   damageType: 1
+  attackPattern: 0
   attackSpeed: 1.5
   timeSinceLastAttack: 0
   attackInterval: 0.5
@@ -401,22 +415,17 @@ MonoBehaviour:
   resIgn: 0
   def: 250
   res: 0
-  animator: {fileID: 3928554344375837195}
-  hitbox: {fileID: 2931441816638537174}
-  attackPoint: {fileID: 5839285335400379541}
-  playerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  healthBar: {fileID: 795730775692141531}
-  rb: {fileID: 2350042532507097380}
-  playerInRange: {fileID: 2559579224099692799}
-  numberOfMoves: 100
   moveCooldown: 7
   moveTime: 2
   moveDistance: 125
   timeSinceLastMovement: 0
-  playerDetected: {fileID: 0}
-  renderer: {fileID: 1132424934882912032}
+  startAttacking: 0
+  movementDisabledCountdown: 0
+  isSentinel: 0
+  initialSpriteFlipped: 0
+  targetsInRange: []
+  validTargets: []
+  isMenuShowcasseObject: 0
 --- !u!222 &6499661638388647973
 CanvasRenderer:
   m_ObjectHideFlags: 0

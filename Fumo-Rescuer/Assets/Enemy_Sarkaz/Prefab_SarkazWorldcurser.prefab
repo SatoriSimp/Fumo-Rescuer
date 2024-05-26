@@ -390,7 +390,7 @@ RectTransform:
   m_GameObject: {fileID: 4244310745313952929}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 19.039534}
-  m_LocalScale: {x: 20, y: 20, z: 20}
+  m_LocalScale: {x: 17, y: 17, z: 17}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6629304110078415580}
@@ -540,28 +540,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c9920812e6c1824da6dfa91413f5b37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 300
-  currentHealth: 0
-  attackDamage: 35
-  damageType: 2
-  attackSpeed: 5
-  timeSinceLastAttack: 5
-  attackInterval: 1
-  attackAnimationStart: 0
-  attackRange: 150
-  defPen: 0
-  defIgn: 0
-  resPen: 0
-  resIgn: 0
-  def: 100
-  res: 550
-  numberOfMoves: 50
-  moveCooldown: 15
-  moveTime: 5
-  moveDistance: 50
-  timeSinceLastMovement: 0
-  startAttacking: 0
-  movementDisabledCountdown: 0
   animator: {fileID: 9028374973556321740}
   hitbox: {fileID: 3218101114152681005}
   attackPoint: {fileID: 7299768124286519768}
@@ -573,6 +551,34 @@ MonoBehaviour:
   playerInRange: {fileID: 720101042646689033}
   playerDetected: {fileID: 0}
   renderer: {fileID: 7650174181095295946}
+  Tooltips: {fileID: 716522257848915386, guid: 99141e9de5e91d34cbc5b7e5c05332da, type: 3}
+  displayTooltipsOnSpawn: 0
+  maxHealth: 300
+  currentHealth: 0
+  attackDamage: 35
+  damageType: 2
+  attackPattern: 1
+  attackSpeed: 5
+  timeSinceLastAttack: 5
+  attackInterval: 1
+  attackAnimationStart: 0
+  attackRange: 150
+  defPen: 0
+  defIgn: 0
+  resPen: 0
+  resIgn: 0
+  def: 100
+  res: 550
+  moveCooldown: 15
+  moveTime: 5
+  moveDistance: 50
+  timeSinceLastMovement: 0
+  startAttacking: 0
+  movementDisabledCountdown: 0
+  isSentinel: 0
+  initialSpriteFlipped: 0
+  targetsInRange: []
+  validTargets: []
 --- !u!50 &8113038099509450059
 Rigidbody2D:
   serializedVersion: 4

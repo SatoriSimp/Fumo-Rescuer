@@ -17,4 +17,9 @@ public class HealthBarScript : MonoBehaviour
     {
         slider.value = Mathf.Max(0, health);
     }
+
+    public void Hide()
+    {
+        slider.gameObject.SetActive(false);
+    }
 }

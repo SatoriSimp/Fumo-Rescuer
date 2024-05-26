@@ -7,11 +7,13 @@ public class EnemySpawnPointScript : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public Transform spawnPoint;
+    public bool displayTooltips = false;
 
     void SpawnPrefabEnemyAndSelfDestruc()
     {
         Debug.Log("New enemy spawned!");
-        Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+        GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, Quaternion.identity);
+        if (displayTooltips) enemy.GetComponent<EnemyBehaviorScript>().DisplayTooltips();
         Destroy(gameObject);
     }
 

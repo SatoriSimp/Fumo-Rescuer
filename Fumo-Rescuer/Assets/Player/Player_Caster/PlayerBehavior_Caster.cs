@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class PlayerBehavior_Caster : PlayerBehaviorScript
 {
-    public TMP_Text skillInEffect;
-
     public GameObject ShootProjectile;
     public GameObject onskill_ShootProjectile;
+
+    public TMP_Text NoTargetInRangeWarning;
 
     public short targetsLimitPerAttack = 1;
     public float skillDuration = 5f;
@@ -20,6 +18,13 @@ public class PlayerBehavior_Caster : PlayerBehaviorScript
     public float onSkill_timeSinceLastAttack = 0;
     public float onSkill_attackDamage;
     public bool skill_starting = false;
+
+    public override void Start()
+    {
+        base.Start();
+        SkillEffect.SetActive(false);
+        NoTargetInRangeWarning.enabled = false;
+    }
 
     public override E_DamageType GetCharacterDamageType()
     {
@@ -35,7 +40,8 @@ public class PlayerBehavior_Caster : PlayerBehaviorScript
         onSkill_timeSinceLastAttack += Time.deltaTime;
 
         skillReady.enabled = timeSinceLastSkillUsage >= skillCooldown;
-        skillInEffect.enabled = skillDurationCountdown > 0;
+
+        if (!isAttacking) NoTargetInRangeWarning.enabled = false;
     }
 
     public override void Update()
@@ -71,6 +77,7 @@ public class PlayerBehavior_Caster : PlayerBehaviorScript
         timeSinceLastSkillUsage = 0f;
         attackDamage /= 2;
         skill_starting = true;
+        SkillEffect.SetActive(true);    
     }
 
     public void LoopSkill()
@@ -99,11 +106,14 @@ public class PlayerBehavior_Caster : PlayerBehaviorScript
         animator.SetFloat("run", 0);
         attackDamage *= 2;
         skill_starting = false;
+        SkillEffect.SetActive(false);
     }
 
     public override void Attack()
     {
         hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+        
+        NoTargetInRangeWarning.enabled = hitEnemies.Length <= 0;
 
         animator.SetTrigger("attack");
         timeSinceLastAttack = 0.0f;
