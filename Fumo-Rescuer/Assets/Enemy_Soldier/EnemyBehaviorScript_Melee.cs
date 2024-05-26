@@ -20,7 +20,7 @@ public class EnemyBehaviorScript_Melee : EnemyBehaviorScript
         {
             if (!target || target.gameObject == this.gameObject) continue;
 
-            DealDamage(attackDamage, target.GetComponent<EnemyBehaviorScript>());
+            DealDamage(attackDamage, target.GetComponent<PlayerBehaviorScript>());
         }
         startAttacking = false;
     }
