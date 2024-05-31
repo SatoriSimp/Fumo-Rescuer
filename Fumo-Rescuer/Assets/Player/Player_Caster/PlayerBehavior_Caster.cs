@@ -5,6 +5,7 @@ public class PlayerBehavior_Caster : PlayerBehaviorScript
 {
     public GameObject ShootProjectile;
     public GameObject onskill_ShootProjectile;
+    [SerializeField] private GameObject AttackRangeIndicator;
 
     public TMP_Text NoTargetInRangeWarning;
 
@@ -24,6 +25,8 @@ public class PlayerBehavior_Caster : PlayerBehaviorScript
         base.Start();
         SkillEffect.SetActive(false);
         NoTargetInRangeWarning.enabled = false;
+
+        AttackRangeIndicator.SetActive(false);
     }
 
     public override E_DamageType GetCharacterDamageType()
@@ -75,9 +78,10 @@ public class PlayerBehavior_Caster : PlayerBehaviorScript
         animator.SetTrigger("skill");
         skillDurationCountdown = 5f;
         timeSinceLastSkillUsage = 0f;
-        attackDamage /= 2;
+        attackDamage = attackDamage * 6 / 10;
         skill_starting = true;
-        SkillEffect.SetActive(true);    
+        SkillEffect.SetActive(true);
+        AttackRangeIndicator.SetActive(true);
     }
 
     public void LoopSkill()
@@ -104,13 +108,15 @@ public class PlayerBehavior_Caster : PlayerBehaviorScript
 
     public void EndSkill() {
         animator.SetFloat("run", 0);
-        attackDamage *= 2;
+        attackDamage = attackDamage * 10 / 6;
         skill_starting = false;
         SkillEffect.SetActive(false);
+        AttackRangeIndicator.SetActive(false);
     }
 
     public override void Attack()
     {
+        AttackRangeIndicator.SetActive(true);
         hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
         
         NoTargetInRangeWarning.enabled = hitEnemies.Length <= 0;
@@ -136,5 +142,6 @@ public class PlayerBehavior_Caster : PlayerBehaviorScript
             }
         }
         isAttacking = false;
+        AttackRangeIndicator.SetActive(false);
     }
 }

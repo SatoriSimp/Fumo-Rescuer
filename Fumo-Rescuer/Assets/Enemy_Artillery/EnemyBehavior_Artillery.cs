@@ -29,7 +29,7 @@ public class EnemyBehavior_Artillery : EnemyBehaviorScript
 
         if (playerDetected)
         {
-            moveDistance = 70f;
+            moveDistance = 40f;
             moveCooldown = 5f;
         }
 
@@ -45,6 +45,8 @@ public class EnemyBehavior_Artillery : EnemyBehaviorScript
         Debug.Log("Skill start!");
         isSkillStarting = true;
         Collider2D skillTarget = validTargets[0];
+        if (!skillTarget) return;
+        
         StartCoroutine(CastSkill(skillTarget.GetComponent<PlayerBehaviorScript>()));
         timeSinceLastSkillUse = 0;
     }
@@ -69,7 +71,7 @@ public class EnemyBehavior_Artillery : EnemyBehaviorScript
 
                 if (bombardCount >= bombardInterval)
                 {
-                    DealDamage((int) (attackDamage * 0.25f), target);
+                    DealDamage((int) (attackDamage * 0.35f), target);
                     bombardCount = 0; // Update next bombardment time
                 }
             }

@@ -163,15 +163,28 @@ public class PlayerBehaviorScript : MonoBehaviour
         }
     }
 
-    public virtual void TakeDamage(int P_Damage, int M_Damage, int T_damage, EnemyBehaviorScript player)
+    public virtual void TakeDamage(int P_Damage, int M_Damage, int T_damage, EnemyBehaviorScript source)
     {
         if (invulnerable > 0) return;
 
-        int damage = (int)(
-            P_Damage * (1 - Mathf.Max(Mathf.Min(def * (1 - player.defPen * 0.01f) - player.defIgn, 950), 0) * 0.001f)
-            + M_Damage * (1 - Mathf.Max(Mathf.Min(res * (1 - player.resPen * 0.01f) - player.resIgn, 900), 0) * 0.001f)
-            + T_damage
-        );
+        int damage;
+
+        if (source) 
+        {
+            damage = (int)(
+                P_Damage * (1 - Mathf.Max(Mathf.Min(def * (1 - source.defPen * 0.01f) - source.defIgn, 950), 0) * 0.001f)
+                + M_Damage * (1 - Mathf.Max(Mathf.Min(res * (1 - source.resPen * 0.01f) - source.resIgn, 900), 0) * 0.001f)
+                + T_damage
+            );
+        }
+        else
+        {
+            damage = (int)(
+                P_Damage * (1 - Mathf.Max(Mathf.Min(def, 950), 0) * 0.001f)
+                + M_Damage * (1 - Mathf.Max(Mathf.Min(res, 900), 0) * 0.001f)
+                + T_damage
+            );
+        }
 
         currentHealth -= damage;
         healthBar.setHealth(currentHealth);

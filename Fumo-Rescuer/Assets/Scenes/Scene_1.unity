@@ -549,6 +549,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: EventSystem
       objectReference: {fileID: 0}
+    - target: {fileID: 6577687849951253961, guid: 9d17ea3d8598d034a8f63376691872db, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 529282722}
+    - target: {fileID: 6577687849951253961, guid: 9d17ea3d8598d034a8f63376691872db, type: 3}
+      propertyPath: currentPlayer
+      value: 
+      objectReference: {fileID: 398890786}
+    - target: {fileID: 6577687849951253961, guid: 9d17ea3d8598d034a8f63376691872db, type: 3}
+      propertyPath: playerStatusBar
+      value: 
+      objectReference: {fileID: 1053105657}
     - target: {fileID: 8135511811695422266, guid: 9d17ea3d8598d034a8f63376691872db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -998,6 +1010,10 @@ PrefabInstance:
     - target: {fileID: 6549419694482039410, guid: 85f9f5e80b1291d4c94e0768ba2ea325, type: 3}
       propertyPath: m_Name
       value: Prefab_Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7366748185658316091, guid: 85f9f5e80b1291d4c94e0768ba2ea325, type: 3}
+      propertyPath: movementLockoutCountup
+      value: -5.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

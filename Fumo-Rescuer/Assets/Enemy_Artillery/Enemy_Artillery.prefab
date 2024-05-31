@@ -326,7 +326,7 @@ MonoBehaviour:
   displayTooltipsOnSpawn: 0
   maxHealth: 500
   currentHealth: 0
-  attackDamage: 60
+  attackDamage: 55
   damageType: 1
   attackPattern: 1
   attackSpeed: 7
@@ -351,6 +351,7 @@ MonoBehaviour:
   flipSprite: 0
   targetsInRange: []
   validTargets: []
+  isMenuShowcaseObject: 0
   bullet: {fileID: 8312335831175114870, guid: 8b6a6b3f204349644a64db479d7aa33b, type: 3}
   isSkillStarting: 0
   SkillCooldown: 35

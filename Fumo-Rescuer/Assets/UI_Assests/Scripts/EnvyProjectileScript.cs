@@ -16,8 +16,11 @@ public class EnvyProjectileScript : MonoBehaviour
     private void Update()
     {
         if (!Target) Destroy(gameObject);
-        // Move the bullet towards the target
-        transform.position = Vector3.MoveTowards(transform.position, Target.transform.position, travelSpeed);
+    }
+
+    private void LateUpdate()
+    {
+        if (Target) transform.position = Vector3.MoveTowards(transform.position, Target.transform.position, travelSpeed);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

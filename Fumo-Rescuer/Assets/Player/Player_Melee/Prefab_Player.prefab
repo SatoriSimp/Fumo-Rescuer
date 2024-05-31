@@ -837,7 +837,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7366748185658316091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -876,6 +876,7 @@ MonoBehaviour:
   hitEnemies: []
   isAttacking: 0
   isFacingRight: 0
+  rb: {fileID: 1376246261585990673}
   animator: {fileID: 6133123910863670536}
   spriteRenderer: {fileID: 4324910579089772929}
   attackPoint: {fileID: 5398654318880685519}
@@ -883,7 +884,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   healthBar: {fileID: 572733681904697963}
-  rb: {fileID: 1376246261585990673}
   skillReady: {fileID: 1236655535931391677}
   SkillEffect: {fileID: 5927019236236397926}
   skillDuration: 7
@@ -891,6 +891,7 @@ MonoBehaviour:
   healingPerSkillCast: 50
   SkillCooldown: 14
   timeSinceSkillUse: 5
+  isUsingSkill: 0
 --- !u!1 &7522938592104266892
 GameObject:
   m_ObjectHideFlags: 0

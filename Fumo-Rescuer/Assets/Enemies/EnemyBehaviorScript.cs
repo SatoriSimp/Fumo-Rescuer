@@ -22,6 +22,8 @@ abstract public class EnemyBehaviorScript : MonoBehaviour
 
     public int maxHealth, currentHealth;
 
+    public bool invulnerable = false;
+
     public int attackDamage;
 
     public enum E_DamageType {
@@ -56,6 +58,8 @@ abstract public class EnemyBehaviorScript : MonoBehaviour
     public float timeSinceLastMovement;
     public bool startAttacking = false;
     public float movementDisabledCountdown = 0f;
+
+    public UnityEngine.Vector3 MoveOffset = UnityEngine.Vector3.zero;
 
     private float baseMoveDistance;
 
@@ -178,7 +182,7 @@ abstract public class EnemyBehaviorScript : MonoBehaviour
             if (!playerDetected)
                 StartCoroutine(MoveToTarget(transform.position, new UnityEngine.Vector2(transform.position.x - moveDistance, transform.position.y), moveTime));
             else
-                transform.position = UnityEngine.Vector2.MoveTowards(transform.position, playerDetected.position, moveDistance * Time.deltaTime);
+                transform.position = UnityEngine.Vector2.MoveTowards(transform.position, playerDetected.position + MoveOffset, moveDistance * Time.deltaTime);
         }
         else animator.SetFloat("move", 0);
     }
@@ -223,6 +227,8 @@ abstract public class EnemyBehaviorScript : MonoBehaviour
 
     public virtual void TakeDamage(int P_Damage, int M_Damage, int T_Damage, PlayerBehaviorScript player)
     {
+        if (invulnerable) return;
+
         int damage;
         
         if (player)
@@ -257,6 +263,8 @@ abstract public class EnemyBehaviorScript : MonoBehaviour
 
     public virtual void TakeDamage(int P_Damage, int M_Damage, int T_Damage, EnemyBehaviorScript source)
     {
+        if (invulnerable) return;
+
         int damage;
 
         if (source)
@@ -291,6 +299,8 @@ abstract public class EnemyBehaviorScript : MonoBehaviour
 
     public virtual void TakeDamage(int P_Damage, int M_Damage, int T_Damage)
     {
+        if (invulnerable) return;
+
         int damage = (int)(
             P_Damage * (1 - Mathf.Max(Mathf.Min(def, 950), 0) * 0.001f)
             + M_Damage * (1 - Mathf.Max(Mathf.Min(res, 900), 0) * 0.001f)
@@ -313,12 +323,14 @@ abstract public class EnemyBehaviorScript : MonoBehaviour
     public virtual void DealDamage(int Pdamage, int Mdamage, int Tdamage,  PlayerBehaviorScript player) 
     {
         if (!player) return;
+
         player.TakeDamage(Pdamage, Mdamage, Tdamage, this);   
     }
 
     public virtual void DealDamage(int damage, PlayerBehaviorScript player)
     {
         if (!player) return;
+
         switch (damageType)
         {
             case E_DamageType.PHYSIC:
