@@ -252,12 +252,7 @@ abstract public class EnemyBehaviorScript : MonoBehaviour
         healthBar.setHealth(currentHealth);
         if (currentHealth <= 0)
         {
-            animator.SetTrigger("die");
-            this.enabled = false;
-            hitbox.enabled = false;
-            playerInRange.enabled = false;
-            healthBar.Hide();
-            Destroy(gameObject, 5);
+            OnDeath();
         }
     }
 
@@ -288,12 +283,7 @@ abstract public class EnemyBehaviorScript : MonoBehaviour
         healthBar.setHealth(currentHealth);
         if (currentHealth <= 0)
         {
-            animator.SetTrigger("die");
-            this.enabled = false;
-            hitbox.enabled = false;
-            playerInRange.enabled = false;
-            healthBar.Hide();
-            Destroy(gameObject, 5);
+            OnDeath();
         }
     }
 
@@ -311,12 +301,7 @@ abstract public class EnemyBehaviorScript : MonoBehaviour
         healthBar.setHealth(currentHealth);
         if (currentHealth <= 0)
         {
-            animator.SetTrigger("die");
-            this.enabled = false;
-            hitbox.enabled = false;
-            healthBar.Hide();
-            playerInRange.enabled = false;
-            Destroy(gameObject, 5);
+            OnDeath();
         }
     }
 
@@ -371,6 +356,16 @@ abstract public class EnemyBehaviorScript : MonoBehaviour
     {
         currentHealth = Mathf.Min(currentHealth + healAmount, maxHealth);
         healthBar.setHealth(currentHealth);
+    }
+
+    public virtual void OnDeath()
+    {
+        animator.SetTrigger("die");
+        this.enabled = false;
+        hitbox.enabled = false;
+        healthBar.Hide();
+        playerInRange.enabled = false;
+        Destroy(gameObject, 5);
     }
 
     public void DisplayTooltips()

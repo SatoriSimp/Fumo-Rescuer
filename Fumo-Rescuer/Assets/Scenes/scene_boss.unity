@@ -669,6 +669,17 @@ MonoBehaviour:
   CageGameObject: {fileID: 1567726139}
   BossSpawnPosition: {fileID: 1236129305}
   BackgroundRenderer: {fileID: 1574554681}
+--- !u!114 &109316462 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6983827154127473577, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
+  m_PrefabInstance: {fileID: 1547163704}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109316454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db171e3fd40d32428435b1f53fd66a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &133591855
 GameObject:
   m_ObjectHideFlags: 0
@@ -10374,6 +10385,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 530582614872206600, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 109316462}
+    - target: {fileID: 530582614872206600, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 530582614872206600, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseGameScript, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1108015365379667200, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
       propertyPath: m_Name
       value: GameObjects
@@ -10418,6 +10441,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2220903265678873737, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 109316462}
+    - target: {fileID: 2220903265678873737, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Retry
+      objectReference: {fileID: 0}
+    - target: {fileID: 2220903265678873737, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseGameScript, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4539801885160238263, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -10433,6 +10468,10 @@ PrefabInstance:
     - target: {fileID: 6898782330692697779, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
       propertyPath: m_LocalPosition.y
       value: -30.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6999769047738260534, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
+      propertyPath: orthographic size
+      value: 230
       objectReference: {fileID: 0}
     - target: {fileID: 8265799035866452883, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
       propertyPath: m_LocalPosition.x

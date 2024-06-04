@@ -11317,50 +11317,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3648181381110575347, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3648181381110575347, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.981
-      objectReference: {fileID: 0}
-    - target: {fileID: 4539801885160238263, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4539801885160238263, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6898782330692697779, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1065
-      objectReference: {fileID: 0}
-    - target: {fileID: 6898782330692697779, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -12
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999769047738260534, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
-      propertyPath: orthographic size
-      value: 600
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265799035866452883, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6025
-      objectReference: {fileID: 0}
-    - target: {fileID: 8265799035866452883, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 8805601902956876159, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
-      propertyPath: size
-      value: 230
-      objectReference: {fileID: 0}
-    - target: {fileID: 8805601902956876159, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
-      propertyPath: sizeStayTime
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

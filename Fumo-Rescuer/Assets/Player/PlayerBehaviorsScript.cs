@@ -59,6 +59,8 @@ public class PlayerBehaviorScript : MonoBehaviour
     public TMP_Text skillReady;
     public GameObject SkillEffect;
 
+    private bool isCollidingWithWalls = false;
+
     public virtual void Start()
     {
         if (StartFunctionExecuted) return;
@@ -106,8 +108,9 @@ public class PlayerBehaviorScript : MonoBehaviour
     // Movement and handles player inputs
     public virtual void GetCharacterMovement()
     {
-        currentSpeed = speed;
         if (movementLockoutCountup < movementLockout) return;
+
+        currentSpeed = isCollidingWithWalls ? 0.5f : speed;
 
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
@@ -227,13 +230,13 @@ public class PlayerBehaviorScript : MonoBehaviour
         // Check if the character has collided with a terrain
         if (collision.gameObject.CompareTag("GameBorder"))
         {
-            speed = 0.5f;
+            isCollidingWithWalls = true;
         }
     }
 
     public void OnCollisionExit2D(Collision2D collision)
     {
-        speed = baseSpeed;
+        isCollidingWithWalls = false;
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

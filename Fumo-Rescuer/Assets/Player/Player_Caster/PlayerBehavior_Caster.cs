@@ -5,7 +5,7 @@ public class PlayerBehavior_Caster : PlayerBehaviorScript
 {
     public GameObject ShootProjectile;
     public GameObject onskill_ShootProjectile;
-    [SerializeField] private GameObject AttackRangeIndicator;
+    [SerializeField] protected GameObject AttackRangeIndicator;
 
     public TMP_Text NoTargetInRangeWarning;
 
@@ -25,7 +25,6 @@ public class PlayerBehavior_Caster : PlayerBehaviorScript
         base.Start();
         SkillEffect.SetActive(false);
         NoTargetInRangeWarning.enabled = false;
-
         AttackRangeIndicator.SetActive(false);
     }
 

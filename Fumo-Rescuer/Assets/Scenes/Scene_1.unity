@@ -321,6 +321,8 @@ MonoBehaviour:
   enemyPrefab: {fileID: 181392894873857074, guid: 2b4eb7f4803303346b3a58e03aabd616, type: 3}
   spawnPoint: {fileID: 343203576}
   displayTooltips: 0
+  spawnNumber: 1
+  targetPlayerUponSpawned: 0
 --- !u!61 &343203578
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -420,6 +422,8 @@ MonoBehaviour:
   enemyPrefab: {fileID: 4244310745313952929, guid: 84d5ba41dfd6f3b48b8564ec39b110c8, type: 3}
   spawnPoint: {fileID: 525861697}
   displayTooltips: 0
+  spawnNumber: 1
+  targetPlayerUponSpawned: 0
 --- !u!61 &525861696
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -545,6 +549,30 @@ PrefabInstance:
       propertyPath: playerStatusBar
       value: 
       objectReference: {fileID: 1053105657}
+    - target: {fileID: 2828968927686857186, guid: 9d17ea3d8598d034a8f63376691872db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 685188525}
+    - target: {fileID: 2828968927686857186, guid: 9d17ea3d8598d034a8f63376691872db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Retry
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828968927686857186, guid: 9d17ea3d8598d034a8f63376691872db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseGameScript, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525481640228251747, guid: 9d17ea3d8598d034a8f63376691872db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 685188525}
+    - target: {fileID: 4525481640228251747, guid: 9d17ea3d8598d034a8f63376691872db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525481640228251747, guid: 9d17ea3d8598d034a8f63376691872db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseGameScript, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6245205396755414839, guid: 9d17ea3d8598d034a8f63376691872db, type: 3}
       propertyPath: m_Name
       value: EventSystem
@@ -606,6 +634,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d17ea3d8598d034a8f63376691872db, type: 3}
+--- !u!114 &685188525 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6447806991259733698, guid: 9d17ea3d8598d034a8f63376691872db, type: 3}
+  m_PrefabInstance: {fileID: 685188524}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1db171e3fd40d32428435b1f53fd66a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &929986948
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,6 +712,8 @@ MonoBehaviour:
   enemyPrefab: {fileID: 1979471699083001611, guid: 34a7b7857b690734ca0628f46521b4e0, type: 3}
   spawnPoint: {fileID: 960597442}
   displayTooltips: 0
+  spawnNumber: 1
+  targetPlayerUponSpawned: 0
 --- !u!61 &960597441
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -906,6 +947,8 @@ MonoBehaviour:
   enemyPrefab: {fileID: 4244310745313952929, guid: 84d5ba41dfd6f3b48b8564ec39b110c8, type: 3}
   spawnPoint: {fileID: 1006577339}
   displayTooltips: 1
+  spawnNumber: 1
+  targetPlayerUponSpawned: 0
 --- !u!61 &1006577341
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1090,6 +1133,8 @@ MonoBehaviour:
   enemyPrefab: {fileID: 1979471699083001611, guid: 34a7b7857b690734ca0628f46521b4e0, type: 3}
   spawnPoint: {fileID: 1386928446}
   displayTooltips: 1
+  spawnNumber: 1
+  targetPlayerUponSpawned: 0
 --- !u!61 &1386928448
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1320,6 +1365,8 @@ MonoBehaviour:
   enemyPrefab: {fileID: 5165713183049459804, guid: 7fc2f2130756ab94f95cd62570a34a88, type: 3}
   spawnPoint: {fileID: 1833477726}
   displayTooltips: 0
+  spawnNumber: 1
+  targetPlayerUponSpawned: 0
 --- !u!61 &1833477728
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1417,6 +1464,8 @@ MonoBehaviour:
   enemyPrefab: {fileID: 1979471699083001611, guid: 34a7b7857b690734ca0628f46521b4e0, type: 3}
   spawnPoint: {fileID: 2032246350}
   displayTooltips: 0
+  spawnNumber: 1
+  targetPlayerUponSpawned: 0
 --- !u!61 &2032246352
 BoxCollider2D:
   m_ObjectHideFlags: 0

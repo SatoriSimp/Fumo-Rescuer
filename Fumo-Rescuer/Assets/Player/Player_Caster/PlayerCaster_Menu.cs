@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class PlayerCaster_Menu : PlayerBehavior_Caster
 {
-
     // Start is called before the first frame update
     public override void Start()
     {

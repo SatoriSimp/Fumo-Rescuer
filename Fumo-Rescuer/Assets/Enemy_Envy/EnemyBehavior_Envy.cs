@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Linq;
-using System.Numerics;
 using UnityEngine;
 
 public class EnemyBehavior_Envy : EnemyBehaviorScript

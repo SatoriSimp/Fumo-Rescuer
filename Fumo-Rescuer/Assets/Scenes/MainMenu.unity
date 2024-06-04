@@ -800,6 +800,11 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &1294788310 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7718042292615938419, guid: aa547de1a94c38b4792f639dbc15a415, type: 3}
+  m_PrefabInstance: {fileID: 1366147460}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1366147460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1006,7 +1011,7 @@ MonoBehaviour:
   SkillEffect: {fileID: 1366147463}
   ShootProjectile: {fileID: 3387205900782375680, guid: 5bf5645e22643b74995801e33e8927b1, type: 3}
   onskill_ShootProjectile: {fileID: 8085925136074179912, guid: 4d3bd7cf1be3bf848a48575bc3c69f41, type: 3}
-  AttackRangeIndicator: {fileID: 4033806557834810009, guid: 6460434d1314cfc4aa0fe05283401cb9, type: 3}
+  AttackRangeIndicator: {fileID: 1294788310}
   NoTargetInRangeWarning: {fileID: 1366147462}
   targetsLimitPerAttack: 1
   skillDuration: 5
