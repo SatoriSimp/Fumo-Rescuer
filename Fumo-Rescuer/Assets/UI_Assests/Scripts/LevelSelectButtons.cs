@@ -1,27 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelSelectButtons : MonoBehaviour
 {
-    public short LevelIndex;
+    public Button[] LevelButtons;
+
+    private int NumberOfCompletedLevels = 0;
 
     private void Start()
     {
-        LevelIndex++;
-        int currentNumberofLevels = SceneManager.sceneCountInBuildSettings - 1;
-        if (LevelIndex > currentNumberofLevels)
+        NumberOfCompletedLevels = PlayerPrefs.GetInt("HighestLevelCompleted");
+
+        for (int i = 0; i < LevelButtons.Length; i++)
         {
-            this.GetComponent<Button>().enabled = false;
-            this.GetComponent<Button>().interactable = false;
+            if (i <= NumberOfCompletedLevels) continue;
+            LevelButtons[i].enabled = false;
+            LevelButtons[i].interactable = false;
         }
     }
 
-    public void OnClickLoadLevel()
+    public void BackToMainMenu()
     {
-        SceneManager.LoadSceneAsync(LevelIndex);
-        if (LevelIndex != 0) GameObject.FindFirstObjectByType<AudioScript>().StopMusic();
+        SceneManager.LoadScene(0);
+    }
+
+    public void OnClickLoadLevel(int LevelIndex)
+    {
+        SceneManager.LoadScene(LevelIndex + 3);
+        GameObject.FindFirstObjectByType<AudioScript>().StopMusic();
     }
 }

@@ -43,6 +43,16 @@ public class GameButtonsScript : MonoBehaviour
         buttonTriggered = true;
     }
 
+    public void LoadUserGuide()
+    {
+        SceneManager.LoadScene("PlayerGuide");
+    }
+
+    public void LoadCatalog()
+    {
+        SceneManager.LoadScene("Catalog");
+    }
+
     public void ReplayGame()
     {
         // Reload the current scene
@@ -51,18 +61,13 @@ public class GameButtonsScript : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        SceneManager.LoadSceneAsync(0);
+        SceneManager.LoadScene(0);
     }
 
     public void GoToNextLevel()
     {
         int NextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        SceneManager.LoadSceneAsync(NextSceneIndex);
-    }
-
-    public void BackToLevelSelection()
-    {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadScene(NextSceneIndex);
     }
 
     public void GameQuit()

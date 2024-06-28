@@ -344,8 +344,8 @@ MonoBehaviour:
   defIgn: 0
   resPen: 0
   resIgn: 0
-  def: 0
-  res: 100
+  def: 30
+  res: 200
   baseAtk: 0
   baseSpeed: 0
   baseDef: 0

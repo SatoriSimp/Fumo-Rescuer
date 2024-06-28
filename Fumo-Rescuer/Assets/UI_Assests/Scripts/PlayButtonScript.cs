@@ -7,6 +7,6 @@ public class PlayButtonScript : MonoBehaviour
 {
     public void SwitchToFirstLevel()
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadScene("LevelSelect", LoadSceneMode.Single);
     }
 }

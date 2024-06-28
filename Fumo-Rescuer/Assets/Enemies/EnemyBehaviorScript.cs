@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Linq;
-using System.Numerics;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 abstract public class EnemyBehaviorScript : MonoBehaviour
 {
     public Animator animator;
-    public Collider2D hitbox;
+    protected Collider2D hitbox;
     public Transform attackPoint;
     public LayerMask playerMask;
     public HealthBarScript healthBar;

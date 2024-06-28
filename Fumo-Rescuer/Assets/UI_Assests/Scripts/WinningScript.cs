@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class WinningScript : MonoBehaviour
@@ -35,9 +36,10 @@ public class WinningScript : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     public void PlayerVictoryConfirmed()
     {
+        SaveProgress();
+
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
         GameObject[] buttons = GameObject.FindGameObjectsWithTag("GameButtons");
@@ -51,6 +53,17 @@ public class WinningScript : MonoBehaviour
         foreach (GameObject enemy in enemies)
         {
             enemy.GetComponent<EnemyBehaviorScript>().TakeDamage(0, 0, 99999, player);
+        }
+    }
+
+    void SaveProgress()
+    {
+        int CurrentLevel = SceneManager.GetActiveScene().buildIndex - 3;
+
+        if (PlayerPrefs.GetInt("HighestLevelCompleted") < CurrentLevel)
+        {
+            PlayerPrefs.SetInt("HighestLevelCompleted", CurrentLevel);
+            PlayerPrefs.Save();
         }
     }
 }
