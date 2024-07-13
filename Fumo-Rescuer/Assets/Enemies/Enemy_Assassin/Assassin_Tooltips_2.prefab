@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 17270988453974573, guid: 073ac6d534b2aeb4e82d39f8385227d7, type: 3}
       propertyPath: m_Name
-      value: Assassin_Tooltips Variant
+      value: Assassin_Tooltips_2
       objectReference: {fileID: 0}
     - target: {fileID: 2777619838620188776, guid: 073ac6d534b2aeb4e82d39f8385227d7, type: 3}
       propertyPath: m_Pivot.x
@@ -94,8 +94,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9106607005160252029, guid: 073ac6d534b2aeb4e82d39f8385227d7, type: 3}
       propertyPath: m_text
-      value: Invisible. When status wears off, dash towards the player unit and immediately
-        uses the special attack. Swiftly enters "Invisible" state again afterwards.
+      value: Invisible. When status wears off, teleports behind the player unit and
+        immediately uses the special attack. Swiftly enters "Invisible" state again
+        afterwards.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class EnemyBehavior_Flayer : EnemyBehaviorScript
 {
+    AudioSource MeleeSFX;
+
     public float MeleeAttackRange = 125;
     public GameObject HeirsPrefab;
 
@@ -18,6 +20,7 @@ public class EnemyBehavior_Flayer : EnemyBehaviorScript
         damageType = E_DamageType.PHYSIC;
         attackPattern = E_AttackPattern.RANGED;
         baseInterval = 0.4f;
+        MeleeSFX = GetComponent<AudioSource>();
     }
 
     public override void Update()
@@ -63,6 +66,11 @@ public class EnemyBehavior_Flayer : EnemyBehaviorScript
         {
             if (validTargets_Melee.Length > 0) 
             {
+                if (MeleeSFX)
+                {
+                    StartCoroutine(PlayMeleeSFX());
+                }
+
                 animator.SetTrigger("attack_2");
                 isPerformingMeleeAttack = true;
 
@@ -76,6 +84,13 @@ public class EnemyBehavior_Flayer : EnemyBehaviorScript
             timeSinceLastAttack = 0;
             movementDisabledCountdown = attackInterval * 2f;
         }
+    }
+
+    IEnumerator PlayMeleeSFX()
+    {
+        yield return new WaitForSeconds(0.15f);
+        MeleeSFX.Stop();
+        MeleeSFX.Play();
     }
 
     public override void DamageFindTargets()

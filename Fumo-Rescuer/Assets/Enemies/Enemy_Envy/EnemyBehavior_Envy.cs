@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyBehavior_Envy : EnemyBehaviorScript
 {
+    AudioSource AttackSFX, DieSFX;
+
     public GameObject EnvyProjectile;
 
     public float SkillCooldown = 20f;
@@ -13,6 +15,12 @@ public class EnemyBehavior_Envy : EnemyBehaviorScript
     public override void Start()
     {
         base.Start();
+
+        AudioSource[] SFXs = GetComponents<AudioSource>();
+        
+        AttackSFX = SFXs[0];
+        DieSFX = SFXs[1];
+
         damageType = E_DamageType.MAGIC;
         attackPattern = E_AttackPattern.RANGED;
         if (isMenuShowcaseObject) initialSpriteFlipped = true;
@@ -26,6 +34,45 @@ public class EnemyBehavior_Envy : EnemyBehaviorScript
             moveCooldown = 2f;
         }
         base.Update();
+    }
+
+    public override void DetectTargetsInRangeAndAttack()
+    {
+        if (!startAttacking)
+        {
+            targetsInRange = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerMask);
+            validTargets = targetsInRange.Where(t => t.gameObject != this.gameObject).ToArray();
+
+            if (validTargets.Length > 0 && !playerDetected)
+            {
+                playerDetected = validTargets[0].transform;
+            }
+        }
+        else
+        {
+            attackAnimationStart += Time.deltaTime;
+            if (attackAnimationStart >= attackInterval)
+            {
+                DamageFindTargets();
+                attackAnimationStart = 0;
+            }
+        }
+
+        if (timeSinceLastAttack >= attackSpeed)
+        {
+            if (validTargets.Length > 0)
+            {
+                if (AttackSFX)
+                {
+                    AttackSFX.Stop();
+                    AttackSFX.Play();
+                }
+                animator.SetTrigger("attack");
+                startAttacking = true;
+                timeSinceLastAttack = 0;
+                movementDisabledCountdown = attackInterval * 2f;
+            }
+        }
     }
 
     public override void DamageFindTargets()
@@ -92,5 +139,11 @@ public class EnemyBehavior_Envy : EnemyBehaviorScript
     {
         base.UpdateCharacterCooldowns();
         TimeSinceLastSkillUse += Time.deltaTime;        
+    }
+
+    public override void OnDeath()
+    {
+        if (DieSFX) DieSFX.Play();
+        base.OnDeath();
     }
 }

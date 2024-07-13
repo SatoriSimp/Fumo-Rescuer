@@ -19,10 +19,12 @@ public class PlayerBehavior_Caster : PlayerBehaviorScript
     public float onSkill_timeSinceLastAttack = 0;
     public float onSkill_attackDamage;
     public bool skill_starting = false;
+    AudioSource skillSFX;
 
     public override void Start()
     {
         base.Start();
+        skillSFX = GetComponent<AudioSource>();
         SkillEffect.SetActive(false);
         NoTargetInRangeWarning.enabled = false;
         AttackRangeIndicator.SetActive(false);
@@ -74,6 +76,11 @@ public class PlayerBehavior_Caster : PlayerBehaviorScript
 
     public void StartSkill()
     {
+        if (skillSFX)
+        {
+            skillSFX.Stop();
+            skillSFX.Play();
+        }
         animator.SetTrigger("skill");
         skillDurationCountdown = 5f;
         timeSinceLastSkillUsage = 0f;

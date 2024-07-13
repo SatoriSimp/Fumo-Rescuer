@@ -560,6 +560,10 @@ PrefabInstance:
       propertyPath: playerStatusBar
       value: 
       objectReference: {fileID: 1053105657}
+    - target: {fileID: 8117217620754048171, guid: 9d17ea3d8598d034a8f63376691872db, type: 3}
+      propertyPath: m_Name
+      value: Pause
+      objectReference: {fileID: 0}
     - target: {fileID: 8135511811695422266, guid: 9d17ea3d8598d034a8f63376691872db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

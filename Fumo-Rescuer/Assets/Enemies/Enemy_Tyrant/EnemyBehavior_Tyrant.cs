@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyBehavior_Tyrant : EnemyBehaviorScript
 {
     public GameObject DoT_Zone;
+    AudioSource AttackSFX;
 
     // Start is called before the first frame update
     public override void Start()
@@ -12,6 +13,7 @@ public class EnemyBehavior_Tyrant : EnemyBehaviorScript
         base.Start();
         damageType = E_DamageType.PHYSIC;
         attackPattern = E_AttackPattern.MELEE;
+        AttackSFX = GetComponent<AudioSource>();
     }
 
     public override void Update()
@@ -29,6 +31,12 @@ public class EnemyBehavior_Tyrant : EnemyBehaviorScript
 
     public override void DamageFindTargets()
     {
+        if (AttackSFX)
+        {
+            AttackSFX.Stop();
+            AttackSFX.Play();
+        }
+
         if (validTargets.Length > 0 && validTargets[0])
         {
             GameObject DoT = Instantiate(DoT_Zone, validTargets[0].transform.position, Quaternion.identity);

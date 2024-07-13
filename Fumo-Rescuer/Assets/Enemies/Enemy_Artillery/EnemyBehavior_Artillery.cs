@@ -1,8 +1,11 @@
 using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class EnemyBehavior_Artillery : EnemyBehaviorScript
 {
+    AudioSource AttackSFX, SkillSFX;
+
     public GameObject bullet;
 
     public bool isSkillStarting = false;
@@ -15,6 +18,11 @@ public class EnemyBehavior_Artillery : EnemyBehaviorScript
     public override void Start()
     {
         base.Start();
+
+        AudioSource[] SFXs = GetComponents<AudioSource>();
+        AttackSFX = SFXs[0];
+        SkillSFX = SFXs[1];
+
         damageType = E_DamageType.PHYSIC;
         attackPattern = E_AttackPattern.RANGED;
         if (isMenuShowcaseObject) initialSpriteFlipped = true;
@@ -40,6 +48,45 @@ public class EnemyBehavior_Artillery : EnemyBehaviorScript
         }
     }
 
+    public override void DetectTargetsInRangeAndAttack()
+    {
+        if (!startAttacking)
+        {
+            targetsInRange = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerMask);
+            validTargets = targetsInRange.Where(t => t.gameObject != this.gameObject).ToArray();
+
+            if (validTargets.Length > 0 && !playerDetected)
+            {
+                playerDetected = validTargets[0].transform;
+            }
+        }
+        else
+        {
+            attackAnimationStart += Time.deltaTime;
+            if (attackAnimationStart >= attackInterval)
+            {
+                DamageFindTargets();
+                attackAnimationStart = 0;
+            }
+        }
+
+        if (timeSinceLastAttack >= attackSpeed)
+        {
+            if (validTargets.Length > 0)
+            {
+                if (AttackSFX)
+                {
+                    AttackSFX.Stop();
+                    AttackSFX.Play();
+                }
+                animator.SetTrigger("attack");
+                startAttacking = true;
+                timeSinceLastAttack = 0;
+                movementDisabledCountdown = attackInterval * 2f;
+            }
+        }
+    }
+
     public void UseSkill() 
     {
         Debug.Log("Skill start!");
@@ -56,8 +103,8 @@ public class EnemyBehavior_Artillery : EnemyBehaviorScript
         animator.SetTrigger("skill");
 
         float skillTimeCountup = 0f;
-        float bombardStartTimemark = 2.5f;
-        float bombardEndTimemark = 6.5f;
+        float bombardStartTimemark = 2f;
+        float bombardEndTimemark = 6f;
         float bombardInterval = 0.25f; // Time between bombardments
         float bombardCount = 0f;
 
@@ -65,12 +112,13 @@ public class EnemyBehavior_Artillery : EnemyBehaviorScript
         {
             skillTimeCountup += Time.deltaTime;
 
-            if (target && skillTimeCountup >= bombardStartTimemark && skillTimeCountup <= bombardEndTimemark)
+            if (target && target.currentHealth > 0 && skillTimeCountup >= bombardStartTimemark && skillTimeCountup <= bombardEndTimemark)
             {
                 bombardCount += Time.deltaTime;
 
                 if (bombardCount >= bombardInterval)
                 {
+                    if (SkillSFX) SkillSFX.Play();
                     DealDamage((int) (attackDamage * 0.35f), target);
                     bombardCount = 0; // Update next bombardment time
                 }
@@ -79,6 +127,7 @@ public class EnemyBehavior_Artillery : EnemyBehaviorScript
             yield return new WaitForSeconds(0);
         }
 
+        if (SkillSFX) SkillSFX.Stop();
         isSkillStarting = false;
     }
 

@@ -12645,7 +12645,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 415, y: -326}
+  m_AnchoredPosition: {x: 415, y: -354.54004}
   m_SizeDelta: {x: 797.93, y: 431.1911}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &607163359
@@ -12673,15 +12673,20 @@ MonoBehaviour:
     - DEF and RES is reduced by 70%
     and 200, respecitvely.
 
-    - Becomes Invisible, and does not take damage while
-    the effect is persist.
+    - Attack and skill ignore 25% of the target''s DEF.
 
-    - Uses "Swift Slayer" 4 seconds after revival and
-    every 8 seconds afterwards.
+    -
+    Becomes Invisible, and does not take damage while the effect is persist.
+
+    -
+    Uses "Swift Slayer" 5 seconds after revival and every 9 seconds afterwards. The
+    cooldown of this skill will be reduced based on self''s missing health, up to
+    a maximum of 4 seconds.
 
     - "Swift Slayer": Temporary disables the Invisible
-    status for 6 seconds, then teleports behind the player''s position, deals 60%
-    ATK as physical damage to them and immediately triggers "Silencer".'
+    status for 6 seconds, then teleports behind the player''s position, dealing 33%
+    ATK as physical damage to the player, plus an additional 0.75% ATK for every
+    1% of the player''s missing health and immediately triggers "Silencer".'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15169,7 +15174,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -0.00015094133}
-  m_SizeDelta: {x: 0, y: 1252.3735}
+  m_SizeDelta: {x: 0, y: 1426.2896}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &742082073
 GameObject:
@@ -19679,7 +19684,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 415, y: 129.89624}
+  m_AnchoredPosition: {x: 415, y: 200}
   m_SizeDelta: {x: 797.93, y: 293.1215}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &913762257
@@ -19706,11 +19711,12 @@ MonoBehaviour:
     count of 1.
 
     - "Silencer": The next attack has greatly increased range and
-    an interval of 2.5 seconds, dealing 150% ATK as physical damage to the player
-    if hits.
+    an interval of 1.1 seconds, dealing 150% ATK as physical damage to the player
+    caught within range.
 
-    - When HP drops to 0 in this phase, revives self by restores HP
-    to full over the course of 10 seconds. After revival, enters the second phase.'
+    - When HP drops to 0 in this phase, revives self by
+    restores HP to full over the course of 10 seconds. After revival, enters the
+    second phase.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -22495,7 +22501,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ATK: 65'
+  m_text: 'ATK: 75'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -29459,7 +29465,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: A strange glim of fire commonly found near the graveyards. Seems to be
     alive. Very lively with its movements and likes to wander around. Not very commonly
-    seen as it explodes if it touches any living and destroy both in the process,
+    seen as it explodes if it touches any living and destroys both in the process.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -40743,7 +40749,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 220590447}
   m_Direction: 2
   m_Value: 1.0000001
-  m_Size: 0.42764914
+  m_Size: 0.37550333
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -40892,7 +40898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.6669922, y: 530}
+  m_AnchoredPosition: {x: 1.6669922, y: 617}
   m_SizeDelta: {x: 797.9331, y: 171.2183}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1892486181
@@ -41598,7 +41604,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 415, y: -693.45996}
+  m_AnchoredPosition: {x: 415, y: -748}
   m_SizeDelta: {x: 797.93, y: 50.493}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1921741407

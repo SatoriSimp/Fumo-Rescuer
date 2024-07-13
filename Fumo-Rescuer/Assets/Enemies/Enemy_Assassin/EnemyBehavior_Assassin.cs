@@ -11,10 +11,16 @@ public class EnemyBehavior_Assassin : EnemyBehaviorScript
     public short SpecialAttackCost = 3;
     private short SpecialAttackCount = 1;
 
+    AudioSource attackSFX, specialAttackSFX, invisibleSFX;
+
     public GameObject specialAttackRangeIndicator;
     public short specialAttackRange = 250;
 
     private bool usingSpecialAttack = false, usingSkill = false;
+
+    private float missingHealthPercentage;
+
+    private PlayerBehaviorScript player;
 
     // Start is called before the first frame update
     public override void Start()
@@ -23,6 +29,11 @@ public class EnemyBehavior_Assassin : EnemyBehaviorScript
         damageType = E_DamageType.PHYSIC;
         attackPattern = E_AttackPattern.MELEE;
         specialAttackRangeIndicator.SetActive(false);
+
+        AudioSource[] sfxs = GetComponents<AudioSource>();
+        attackSFX = sfxs[0];
+        specialAttackSFX = sfxs[1];
+        invisibleSFX = sfxs[2];
     }
 
     // Update is called once per frame
@@ -34,9 +45,12 @@ public class EnemyBehavior_Assassin : EnemyBehaviorScript
 
         if (playerDetected)
         {
+            if (!player) player = playerDetected.GetComponent<PlayerBehaviorScript>();
             moveDistance = 90f;
             moveCooldown = 5;
         }
+
+        missingHealthPercentage = (maxHealth - currentHealth) * 1.0f / maxHealth;
 
         switch (Phase)
         {
@@ -88,6 +102,10 @@ public class EnemyBehavior_Assassin : EnemyBehaviorScript
                 }
                 else
                 {
+                    if (attackSFX)
+                    {
+                        attackSFX.Play();
+                    }
                     animator.SetTrigger("attack");
                     movementDisabledCountdown = attackInterval * 2f;
                     SpecialAttackCount++;
@@ -101,6 +119,7 @@ public class EnemyBehavior_Assassin : EnemyBehaviorScript
     public void Phase_2_Action()
     {
         moveDistance = 40;
+        attackSpeed = 9.0f - (4.0f * missingHealthPercentage);
 
         AttemptToMove();
         CheckAndFlipSpriteIfNecessary();
@@ -159,11 +178,16 @@ public class EnemyBehavior_Assassin : EnemyBehaviorScript
 
     IEnumerator UseSpecialAttack(float duration)
     {
+        if (specialAttackSFX)
+        {
+            specialAttackSFX.Stop();
+            specialAttackSFX.Play();
+        }
         specialAttackRangeIndicator.SetActive(true);
         animator.SetTrigger("attack_2");
         usingSpecialAttack = true;
 
-        float attackDuration = 2.6f;
+        float attackDuration = 2.2f;
         float damageTimeMark = 1.1f;
         float durationCount = 0;
         bool damaged = false;
@@ -225,13 +249,14 @@ public class EnemyBehavior_Assassin : EnemyBehaviorScript
 
         def *= 0.3f;
         res -= 200;
+        defPen += 25;
 
         movementDisabledCountdown = 0;
         startAttacking = false;
         usingSpecialAttack = false;
         usingSkill = false;
         timeSinceLastAttack = 4;
-        attackSpeed = 8;
+        attackSpeed = 9;
         invulnerable = true;
     }
 
@@ -243,7 +268,7 @@ public class EnemyBehavior_Assassin : EnemyBehaviorScript
         while (counter < duration)
         {
             counter += Time.deltaTime;
-            float alpha = Mathf.Lerp(1, 0.2f, counter / duration);
+            float alpha = Mathf.Lerp(1, 0.1f, counter / duration);
 
             renderer.color = new Color(spriteColor.r, spriteColor.g, spriteColor.b, alpha);
             yield return null;
@@ -260,7 +285,7 @@ public class EnemyBehavior_Assassin : EnemyBehaviorScript
         while (counter < fadeDuration)
         {
             counter += Time.deltaTime;
-            float alpha = Mathf.Lerp(0.2f, 1, counter / fadeDuration);
+            float alpha = Mathf.Lerp(0.1f, 1, counter / fadeDuration);
 
             renderer.color = new Color(spriteColor.r, spriteColor.g, spriteColor.b, alpha);
             yield return null;
@@ -286,15 +311,34 @@ public class EnemyBehavior_Assassin : EnemyBehaviorScript
         foreach (Collider2D target in validTargets)
         {
             if (!target) continue;
-            DealDamage((int)(attackDamage * 0.65f),
+
+            int dashDamage = (int) 
+            (
+                player 
+                ? 
+                (attackDamage * 0.33f) 
+                : 
+                (attackDamage * (0.33f + ((player.maxHealth - player.currentHealth) * 100 / player.maxHealth * 0.0075f)))
+            );
+            
+            DealDamage(dashDamage,
                 target.GetComponent<PlayerBehaviorScript>()
             );
+
+            Debug.Log("Dash attack dealt " + dashDamage + " damage!");
         }
         CheckAndFlipSpriteIfNecessary();
     }
 
     public IEnumerator DashAndAttack()
     {
+        if (invisibleSFX)
+        {
+            invisibleSFX.Stop();
+            invisibleSFX.Play();
+        }
+        yield return new WaitForSeconds(1f);
+
         yield return FadeIn(0.5f);
         usingSkill = true;
         invulnerable = false;

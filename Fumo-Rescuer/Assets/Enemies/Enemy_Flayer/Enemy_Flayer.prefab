@@ -188,6 +188,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4224993734577112395, guid: a2cc36d72a7bac2408d26efd040f2508, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2341873041084259685}
+    - targetCorrespondingSourceObject: {fileID: 4224993734577112395, guid: a2cc36d72a7bac2408d26efd040f2508, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1302946302366343755}
   m_SourcePrefab: {fileID: 100100000, guid: a2cc36d72a7bac2408d26efd040f2508, type: 3}
 --- !u!114 &368127766824699588 stripped
 MonoBehaviour:
@@ -216,11 +219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!61 &5401716562897434942 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 2315391136875585279, guid: a2cc36d72a7bac2408d26efd040f2508, type: 3}
-  m_PrefabInstance: {fileID: 7698669781902616513}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5797568726617203338 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4224993734577112395, guid: a2cc36d72a7bac2408d26efd040f2508, type: 3}
@@ -239,7 +237,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 8293492964046542692}
-  hitbox: {fileID: 5401716562897434942}
   attackPoint: {fileID: 9035426655130310098}
   playerMask:
     serializedVersion: 2
@@ -283,6 +280,102 @@ MonoBehaviour:
   isMenuShowcaseObject: 0
   MeleeAttackRange: 100
   HeirsPrefab: {fileID: 5436589624824371034, guid: 77a1a20d0cb070747aed8ff6a74707e8, type: 3}
+--- !u!82 &-1302946302366343755
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5797568726617203338}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 08d7655e4a68b2740aa3e265d28391ab, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.6
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 2
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!212 &6103919625689575092 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 4495245468692236661, guid: a2cc36d72a7bac2408d26efd040f2508, type: 3}

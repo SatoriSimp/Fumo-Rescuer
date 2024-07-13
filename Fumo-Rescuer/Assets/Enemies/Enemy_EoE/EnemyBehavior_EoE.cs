@@ -30,7 +30,8 @@ public class EnemyBehavior_EoE : EnemyBehaviorScript
     [SerializeField] private GameObject SpikeAttack;
     [SerializeField] private GameObject SlugPrefab;
     [SerializeField] private GameObject ShatteredGroundPrefab;
-
+    AudioSource SpikeAttackSFX;
+    
     // P2 assets
     [SerializeField] private float SweepAttackDistance;
 
@@ -47,6 +48,9 @@ public class EnemyBehavior_EoE : EnemyBehaviorScript
     public override void Start()
     {
         base.Start();
+        
+        SpikeAttackSFX = GetComponent<AudioSource>();
+        
         damageType = E_DamageType.PHYSIC;
         attackPattern = E_AttackPattern.RANGED;
         displayTooltipsOnSpawn = false;
@@ -123,12 +127,12 @@ public class EnemyBehavior_EoE : EnemyBehaviorScript
 
         if (HPLossTimerCountup >= 1 && playerDetected)
         {
-            TakeDamage(0, 0, 6, this);
+            TakeDamage(0, 0, 8, this);
             HPLossTimerCountup = 0;
             if (ShatteredGround)
             {
-                ShatteredGround.transform.localScale += Vector3.one * 1.5f;
-                ShatteredGround.radius += 12;
+                ShatteredGround.transform.localScale += Vector3.one * 2f;
+                ShatteredGround.radius += 25;
             }
         }
 
@@ -248,6 +252,11 @@ public class EnemyBehavior_EoE : EnemyBehaviorScript
     {
         if (!playerDetected) return;
 
+        if (SpikeAttackSFX)
+        {
+            SpikeAttackSFX.Stop();
+            SpikeAttackSFX.Play();
+        }
         animator.SetTrigger("skill");
 
         Vector3 enemyPos = attackPoint.position, playerPos = playerDetected.position;

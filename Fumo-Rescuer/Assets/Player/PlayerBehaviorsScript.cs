@@ -216,7 +216,6 @@ public class PlayerBehaviorScript : MonoBehaviour
         {
             if (!enemyHit || enemyHit != hitbox)
             {
-                Debug.Log(enemyHit.name + " hit!");
                 DealDamage(attackDamage, enemyHit.GetComponent<EnemyBehaviorScript>());
             }
         }

@@ -4,7 +4,8 @@ using System.Linq;
 using UnityEngine;
 public class EnemyBehavior_Slug : EnemyBehaviorScript
 {
-    public float lifeStealRatio = 0.15f;
+    AudioSource AttackSFX;
+    public float lifeStealRatio = 0.8f;
     
     // Start is called before the first frame update
     public override void Start()
@@ -12,6 +13,7 @@ public class EnemyBehavior_Slug : EnemyBehaviorScript
         base.Start();
         damageType = E_DamageType.MAGIC;
         attackPattern = E_AttackPattern.MELEE;
+        AttackSFX = GetComponent<AudioSource>();
 
         if (isMenuShowcaseObject) initialSpriteFlipped = true;
     }
@@ -29,6 +31,7 @@ public class EnemyBehavior_Slug : EnemyBehaviorScript
 
     public override void DealDamage(int damage, PlayerBehaviorScript player)
     {
+        if (AttackSFX) AttackSFX.Play();
         base.DealDamage(damage, player);
         Heal((int) (attackDamage * lifeStealRatio));
     }
