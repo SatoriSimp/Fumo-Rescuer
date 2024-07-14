@@ -48,7 +48,7 @@ public class LevelSelectButtons : MonoBehaviour
 
     public void OnClickLoadLevel(int LevelIndex)
     {
-        SceneManager.LoadScene(LevelIndex + 3);
+        SceneManager.LoadScene(LevelIndex + 4);
         GameObject.FindFirstObjectByType<AudioScript>().StopMusic();
     }
 }

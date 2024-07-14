@@ -16,11 +16,11 @@ public class EnemyBehavior_Flayer : EnemyBehaviorScript
 
     public override void Start()
     {
+        MeleeSFX = GetComponent<AudioSource>();
         base.Start();
         damageType = E_DamageType.PHYSIC;
         attackPattern = E_AttackPattern.RANGED;
         baseInterval = 0.4f;
-        MeleeSFX = GetComponent<AudioSource>();
     }
 
     public override void Update()

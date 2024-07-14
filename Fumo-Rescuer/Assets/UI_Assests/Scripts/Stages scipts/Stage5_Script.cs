@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stage4Script : MonoBehaviour
+public class Stage5_Script : MonoBehaviour
 {
     public GameObject[] Triggers;
     public GameObject[] Gates;
@@ -24,6 +24,7 @@ public class Stage4Script : MonoBehaviour
         DisableAllWispSpawnpoints();
         StartCoroutine(PlayAudio());
         Fumo = GameObject.FindGameObjectWithTag("FumoTrophy");
+        BGM.volume = PlayerPrefs.GetFloat("BGM_Volume", 1.0f);
     }
 
     // Update is called once per frame

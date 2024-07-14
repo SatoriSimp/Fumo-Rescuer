@@ -10,10 +10,10 @@ public class EnemyBehavior_Slug : EnemyBehaviorScript
     // Start is called before the first frame update
     public override void Start()
     {
+        AttackSFX = GetComponent<AudioSource>();
         base.Start();
         damageType = E_DamageType.MAGIC;
         attackPattern = E_AttackPattern.MELEE;
-        AttackSFX = GetComponent<AudioSource>();
 
         if (isMenuShowcaseObject) initialSpriteFlipped = true;
     }

@@ -73,6 +73,8 @@ public class PlayerBehaviorScript : MonoBehaviour
         damageType = GetCharacterDamageType();
         isFacingRight = true;
 
+        AdjustPlayerStats();
+
         baseAtk = attackDamage;
         baseDef = def;
         baseRes = res;
@@ -87,6 +89,39 @@ public class PlayerBehaviorScript : MonoBehaviour
     public virtual E_DamageType GetCharacterDamageType()
     {
         return E_DamageType.TRUE;
+    }
+
+    void AdjustPlayerStats()
+    {
+        int difficulty = PlayerPrefs.GetInt("Difficulty", 1);
+        float statsMultiplier;
+
+        switch (difficulty)
+        {
+            case 0:
+                statsMultiplier = 1.35f;
+                defIgn += 100;
+                defPen += 10;
+                resIgn += 100;
+                resPen += 10;
+                speed += 15;
+                break;
+            case 1:
+                statsMultiplier = 1f;
+                break;
+            case 2:
+                statsMultiplier = 0.75f;
+                break;
+            default:
+                statsMultiplier = 0.6f;
+                speed -= 15f;
+                break;
+        }
+
+        attackDamage = (int)(attackDamage * statsMultiplier);
+        maxHealth = (int)(maxHealth * statsMultiplier);
+        def *= statsMultiplier;
+        res *= statsMultiplier;
     }
 
     public virtual void Update()

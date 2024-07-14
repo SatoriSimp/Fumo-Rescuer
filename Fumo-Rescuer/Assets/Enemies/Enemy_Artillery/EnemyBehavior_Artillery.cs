@@ -17,11 +17,11 @@ public class EnemyBehavior_Artillery : EnemyBehaviorScript
     // Start is called before the first frame update
     public override void Start()
     {
-        base.Start();
-
         AudioSource[] SFXs = GetComponents<AudioSource>();
         AttackSFX = SFXs[0];
         SkillSFX = SFXs[1];
+
+        base.Start();
 
         damageType = E_DamageType.PHYSIC;
         attackPattern = E_AttackPattern.RANGED;

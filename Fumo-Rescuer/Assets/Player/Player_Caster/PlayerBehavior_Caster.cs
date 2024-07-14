@@ -28,6 +28,8 @@ public class PlayerBehavior_Caster : PlayerBehaviorScript
         SkillEffect.SetActive(false);
         NoTargetInRangeWarning.enabled = false;
         AttackRangeIndicator.SetActive(false);
+
+        skillSFX.volume = PlayerPrefs.GetFloat("SFX_Volume", 1.0f);
     }
 
     public override E_DamageType GetCharacterDamageType()

@@ -12685,8 +12685,7 @@ MonoBehaviour:
 
     - "Swift Slayer": Temporary disables the Invisible
     status for 6 seconds, then teleports behind the player''s position, dealing 33%
-    ATK as physical damage to the player, plus an additional 0.75% ATK for every
-    1% of the player''s missing health and immediately triggers "Silencer".'
+    ATK as physical damage in the process and immediately triggers "Silencer".'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17058,10 +17057,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: An elite combatant that usually guards the most curcial areas in their
-    territory. Despite being execellent in both ranged and melee combat, they will
+  m_text: An elite combatant that usually guards the most crucial areas in their
+    territory. Despite being excellent in both ranged and melee combat, they will
     always choose the latter whenever possible. They have never once failed their
-    duty as a guard, as those who has encountered them was never returned.
+    duty as a guard, as those who have encountered them have never returned.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17456,11 +17455,11 @@ MonoBehaviour:
     will be used 3 seconds after entering this phase and every 9 seconds afterwards,
     and additionally has its size increased by 20%.
 
-    - "Bloodthristy Heir" will
+    - "Bloodthirsty Heir" will
     be spawned 6 seconds after entering this phase and every 12 seconds afterwards.
 
     -
-    When HP drops to 0 in this phase, revives self by restores HP to full over the
+    When HP drops to 0 in this phase, revives self by restoring HP to full over the
     course of 5 seconds. After revival, enters the final phase.
 
 '
@@ -22684,7 +22683,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 348.87, y: -580}
+  m_AnchoredPosition: {x: 348.87, y: -607}
   m_SizeDelta: {x: 797.93, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1049688863
@@ -29325,7 +29324,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: '- Temporary stops attacking and lock-on to the target, continuously bombard
-    them every 0.25s over the course of 6 seconds, dealing 25% ATK as physical damage
+    them every 0.25s over the course of 4 seconds, dealing 35% ATK as physical damage
     each time.
 
     - "Lock-on": Locked-on target can be attacked anywhere regardless
@@ -29735,7 +29734,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '- DEF and RES are increased to 1000.
 
-    - Now lose 5 HP every second.
+    - Now lose 8 HP every second.
 
     -
     Spawn "Wisps" that move in a straight line towards 4 different directions every
@@ -29747,16 +29746,16 @@ MonoBehaviour:
     - "Underground Ritual" will be used every 6 seconds, and
     additionally has its size increased by another 20%.
 
-    - "Bloodthristy Heir"
+    - "Bloodthirsty Heir"
     will be spawned every 5 seconds.
 
-    - Create a "Shattered Ground" centers at
+    - Form a "Shattered Ground" centered at
     self position, which will gradually grow in size and deals 4 physical damage
     every 0.5 seconds to the player in its area.
 
     - 5 seconds after entering
-    this phase. Permanently activate "Gravitate Death", continuously pull the player
-    unit towards self position with the pull force of 70.'
+    this phase: Permanently activate "Gravitate Death", continuously pull the player
+    unit towards self position.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -34185,7 +34184,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Bloodthristy Heir
+  m_text: Bloodthirsty Heir
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -34588,8 +34587,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Creature that was born from the unknown, adapting blood as their only source
-    of nutrion. They always thirst for more blood, strengthening themselves by stealing
-    the blood of others.
+    of nutrition. They always thirst for more blood, strengthening themselves by
+    stealing the blood of others.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -36046,10 +36045,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A caster that has spent their whole life chasing for immortality, and despite
-    not yet successed, they have somewhat able to mimic it. By sending their soul
-    into a clone and hiding it far away from the main body, they can dive deep into
-    battle while also remains completely safe from the smoke of wars.
+  m_text: 'A caster that has spent their whole life chasing for immortality, and
+    despite not yet having succeeded, they have been able to somewhat mimic it. By
+    sending their soul into a clone and hiding it far away from the main body, they
+    can dive deep into battle while also remaining completely safe from the smoke
+    of war. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -41305,7 +41305,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ASPD: 0.2'
+  m_text: 'ASPD: 0.25'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -43273,7 +43273,7 @@ MonoBehaviour:
   m_text: '- Cast "Underground Ritual" 2 seconds after entering this phase and every
     12 seconds afterwards.
 
-    - Spawn a "Bloodthristy Heir" 10 seconds after entering
+    - Spawn a "Bloodthirsty Heir" 10 seconds after entering
     this phase and every 20 seconds afterwards.
 
     - "Underground Ritual": Summons
@@ -43281,7 +43281,7 @@ MonoBehaviour:
     becomes activated, deals 150% ATK as physical damage to the player if hits.
 
     -
-    When HP drops to 0 in this phase, revives self by restores HP to full over the
+    When HP drops to 0 in this phase, revives self by restoring HP to full over the
     course of 5 seconds. After revival, enters the second phase.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -45051,7 +45051,7 @@ MonoBehaviour:
     damage and ignores 50% of the target''s DEF.
 
     - When defeated, spawns two
-    "Bloodthristy Heirs" at self position.'
+    "Bloodthirsty Heirs" at self position.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

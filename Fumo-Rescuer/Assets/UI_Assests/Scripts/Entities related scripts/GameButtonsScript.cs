@@ -53,6 +53,12 @@ public class GameButtonsScript : MonoBehaviour
         SceneManager.LoadScene("Catalog");
     }
 
+
+    public void LoadSettings()
+    {
+        SceneManager.LoadScene("Settings");
+    }
+
     public void ReplayGame()
     {
         // Reload the current scene

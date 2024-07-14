@@ -15,11 +15,12 @@ public class EnemyBehavior_Sentinel : EnemyBehaviorScript
 
     public override void Start()
     {
+        AlarmSFX = GetComponent<AudioSource>();
+
         base.Start();
         damageType = E_DamageType.PHYSIC;
         attackPattern = E_AttackPattern.SENTINEL;
 
-        AlarmSFX = GetComponent<AudioSource>();
         RangeIndicator = attackPoint.GetComponentInChildren<Transform>();
 
         CheckpointsCount = CheckPoints.Count;

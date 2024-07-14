@@ -47,9 +47,9 @@ public class EnemyBehavior_EoE : EnemyBehaviorScript
 
     public override void Start()
     {
-        base.Start();
-        
         SpikeAttackSFX = GetComponent<AudioSource>();
+
+        base.Start();
         
         damageType = E_DamageType.PHYSIC;
         attackPattern = E_AttackPattern.RANGED;

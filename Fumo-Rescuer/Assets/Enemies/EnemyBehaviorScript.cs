@@ -81,6 +81,7 @@ abstract public class EnemyBehaviorScript : MonoBehaviour
         playerInRange.enabled = false;
         initialSpriteFlipped = renderer.flipX && moveDistance >= 0;
         baseMoveDistance = moveDistance;
+        SetSFXsVolume();
         if (displayTooltipsOnSpawn) DisplayTooltips();
     }
 
@@ -96,6 +97,20 @@ abstract public class EnemyBehaviorScript : MonoBehaviour
             moveCooldown = 
                 attackPattern == E_AttackPattern.MELEE ? 0.5f : 2f;
             moveDistance = Mathf.Abs(moveDistance);
+        }
+    }
+
+    public void SetSFXsVolume()
+    {
+        AudioSource[] sfxs = GetComponents<AudioSource>();
+        float volumn = PlayerPrefs.GetFloat("SFX_Volume", 1f);
+
+        if (sfxs.Length > 0)
+        {
+            foreach (AudioSource sfx in sfxs)
+            {
+                sfx.volume = volumn;
+            }
         }
     }
 

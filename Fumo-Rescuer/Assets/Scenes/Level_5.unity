@@ -1617,6 +1617,20 @@ MonoBehaviour:
   section3_WispTooltips: {fileID: 7683339609052035690, guid: 9151ad64010cd124295e89f09e5e10a6, type: 3}
   BGM: {fileID: 1533208298}
   Fumo: {fileID: 0}
+--- !u!114 &111590947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111590940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63775c8d06630804c8269473e010ebcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeType: 0
+  isGameSetting: 0
 --- !u!1001 &115530748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13030,6 +13044,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 6.9445
       objectReference: {fileID: 0}
+    - target: {fileID: 8015231653290621532, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
+      propertyPath: m_TagString
+      value: BGM
+      objectReference: {fileID: 0}
     - target: {fileID: 8175434436292780611, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
       propertyPath: m_LocalScale.x
       value: 11.1112
@@ -13087,6 +13105,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8015231653290621532, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
       insertIndex: -1
       addedObject: {fileID: 111590946}
+    - targetCorrespondingSourceObject: {fileID: 8015231653290621532, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 111590947}
   m_SourcePrefab: {fileID: 100100000, guid: ea40d3a3b9391004e93690f1a53d86f4, type: 3}
 --- !u!1001 &871824209
 PrefabInstance:

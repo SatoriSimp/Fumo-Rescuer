@@ -9,6 +9,12 @@ public class SniperProjectileScript : MonoBehaviour
 
     private Collider2D Target;
 
+    private void Start()
+    {
+        AudioSource sfx = GetComponent<AudioSource>();
+        sfx.volume = PlayerPrefs.GetFloat("SFX_Volume", 1.0f);
+    }
+
     public void ShootTowards(Collider2D enemyCollider)
     {
         Target = enemyCollider;

@@ -10,10 +10,10 @@ public class EnemyBehavior_Tyrant : EnemyBehaviorScript
     // Start is called before the first frame update
     public override void Start()
     {
+        AttackSFX = GetComponent<AudioSource>();
         base.Start();
         damageType = E_DamageType.PHYSIC;
         attackPattern = E_AttackPattern.MELEE;
-        AttackSFX = GetComponent<AudioSource>();
     }
 
     public override void Update()

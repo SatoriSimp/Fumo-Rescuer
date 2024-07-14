@@ -25,15 +25,15 @@ public class EnemyBehavior_Assassin : EnemyBehaviorScript
     // Start is called before the first frame update
     public override void Start()
     {
-        base.Start();
-        damageType = E_DamageType.PHYSIC;
-        attackPattern = E_AttackPattern.MELEE;
-        specialAttackRangeIndicator.SetActive(false);
-
         AudioSource[] sfxs = GetComponents<AudioSource>();
         attackSFX = sfxs[0];
         specialAttackSFX = sfxs[1];
         invisibleSFX = sfxs[2];
+
+        base.Start();
+        damageType = E_DamageType.PHYSIC;
+        attackPattern = E_AttackPattern.MELEE;
+        specialAttackRangeIndicator.SetActive(false);
     }
 
     // Update is called once per frame

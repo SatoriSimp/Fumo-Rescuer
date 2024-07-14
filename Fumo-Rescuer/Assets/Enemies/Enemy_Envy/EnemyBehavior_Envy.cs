@@ -14,12 +14,12 @@ public class EnemyBehavior_Envy : EnemyBehaviorScript
 
     public override void Start()
     {
-        base.Start();
 
         AudioSource[] SFXs = GetComponents<AudioSource>();
-        
         AttackSFX = SFXs[0];
         DieSFX = SFXs[1];
+
+        base.Start();
 
         damageType = E_DamageType.MAGIC;
         attackPattern = E_AttackPattern.RANGED;

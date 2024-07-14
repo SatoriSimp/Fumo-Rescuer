@@ -9,6 +9,7 @@ TagManager:
   - FumoTrophy
   - Win
   - GameButtons
+  - BGM
   layers:
   - Default
   - TransparentFX

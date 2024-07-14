@@ -28,6 +28,7 @@ public class CatalogScript : MonoBehaviour
     {
         HighestCurrentLevel = PlayerPrefs.GetInt("HighestLevelCompleted");
         SFX = GetComponent<AudioSource>();
+        SFX.volume = PlayerPrefs.GetFloat("SFX_Volume", 1.0f);
 
         for (int i = 0; i < EnemyButtons.Length; ++i)
         {
