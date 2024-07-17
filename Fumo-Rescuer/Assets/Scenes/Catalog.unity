@@ -4807,7 +4807,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: A dangerous melee combatant. Their absurd physical strength speaks for
-    their words, every swing from their greatsword is enough to shaken the earth.
+    their words; every swing from their greatsword is enough to shake the earth.
     Needless to say, they are just as reckless as they look.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12670,20 +12670,20 @@ MonoBehaviour:
       m_Calls: []
   m_text: '- No longer perform normal attack.
 
-    - DEF and RES is reduced by 70%
+    - DEF and RES are reduced by 70%
     and 200, respecitvely.
 
     - Attack and skill ignore 25% of the target''s DEF.
 
     -
-    Becomes Invisible, and does not take damage while the effect is persist.
+    Becomes Invisible, and does not take damage while the effect persists.
 
     -
     Uses "Swift Slayer" 5 seconds after revival and every 9 seconds afterwards. The
     cooldown of this skill will be reduced based on self''s missing health, up to
     a maximum of 4 seconds.
 
-    - "Swift Slayer": Temporary disables the Invisible
+    - "Swift Slayer": Temporarily disables the Invisible
     status for 6 seconds, then teleports behind the player''s position, dealing 33%
     ATK as physical damage in the process and immediately triggers "Silencer".'
   m_isRightToLeft: 0
@@ -16431,10 +16431,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Wraiths lurking around every corner, relentlessly attacking others from
-    out of nowhere. They enjoy the feeling of sneakily attack their target from afar,
-    then quickly hide themselves inside unreachable spots, just to see the target
-    suffers in pain and desperation.
+  m_text: Wraith lurks around every corner, relentlessly attacking others from out
+    of nowhere. They enjoy the feeling of sneakily attacking their target from afar,
+    then quickly hiding themselves inside unreachable spots, just to see the target
+    suffer in pain and desperation.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17573,7 +17573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 348.87, y: -614.8805}
+  m_AnchoredPosition: {x: 348.87, y: -652}
   m_SizeDelta: {x: 797.93, y: 119.761}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &837985019
@@ -18823,13 +18823,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "An existence that is simply beyond understanding. Judged on the events
-    that happened recently, it is concluded that this entity was summoned via performing
-    an extremely complex ritual, in which our Fumos acted as a condutor for the ritual
-    to success.\nThis so-called node of evolution seems to be able to constantly
-    adapt to the environment around it and grows stronger overtime. \nIf we let this
-    thing survive long enough, its power will become out of control, and it will
-    then start going rampage on the overworld."
+  m_text: "An existence that is simply beyond understanding. Based on the events
+    that happened recently, it can be concluded that this entity was summoned by
+    performing an extremely complex ritual, in which our Fumos acted as a condutor
+    for the ritual to succeed.\r\nThis so-called node of evolution seems to be able
+    to constantly adapt to the environment around it and grow stronger over time.\_\r\nIf
+    we let this thing survive long enough, its power will become out of control,
+    and it will then start going rampage on the overworld."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -22363,10 +22363,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A sentinel guarding their territory. Despite the lacks of combat skill,
-    their sharp eyesight making them quite useful in detecting any outsider lurking
-    around. Even when always vulnerable to attack, their alarm is faster than the
-    enemy's blade, ensuring their allies to take good care of the infiltrator.
+  m_text: A sentinel guarding their territory. Despite their lack of combat skills,
+    their sharp eyesight makes them quite useful in detecting any outsider lurking
+    around. Even when they are always vulnerable to attack, their alarm is faster
+    than the enemy's blade, ensuring their allies take good care of the infiltrator.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -32194,9 +32194,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A ranged combatant. They use their own lifeforce to cast magic, so they
-    usually try avoid to engage in unnecessary conflicts. When forced into one however,
-    they won't hesitate to hunt down their opponent until the bitter end.
+  m_text: A ranged combatant. They use their own life-force to cast magic, so they
+    usually try to avoid engaging in unnecessary conflicts. When forced into one,
+    however, they won't hesitate to hunt down their opponent until the bitter end.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -33941,7 +33941,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: An aggressive melee combatant. Though lacking any special ability, they
-    make up for it with their abnormal physical strength and dsitinct fighting style.
+    make up for it with their abnormal physical strength and distinct fighting style.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -37567,8 +37567,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Originally used for defensive purpose and was unable to move on its own,
-    it was then modified to be more mobile and now serves as a powerful siege weapon.
+  m_text: Originally used for defensive purposes and unable to move on its own, it
+    was then modified to be more mobile and now serves as a powerful siege weapon.
     Tough outer shell allows it to withstand heavy firepower, but magical attacks
     can easily penetrate through and damage it from the inside.
   m_isRightToLeft: 0

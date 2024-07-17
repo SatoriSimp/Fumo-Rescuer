@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class ScreenSizeSetting : MonoBehaviour
 {
+    /*
     TMP_Dropdown dropdown;
 
     private void Start()
@@ -34,6 +35,7 @@ public class ScreenSizeSetting : MonoBehaviour
         }
         PlayerPrefs.SetInt("WindowSize", index);
     }
+    */
 
     public void Quit()
     {

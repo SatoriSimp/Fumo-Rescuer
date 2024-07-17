@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class PlayerBehaviorScript : MonoBehaviour
 {
     public int maxHealth = 100;
@@ -94,41 +93,48 @@ public class PlayerBehaviorScript : MonoBehaviour
     void AdjustPlayerStats()
     {
         int difficulty = PlayerPrefs.GetInt("Difficulty", 1);
-        float statsMultiplier;
+        float healthMultiplier, resistancesMultiplier, atkMultiplier;
+
 
         switch (difficulty)
         {
             case 0:
-                statsMultiplier = 1.35f;
+                healthMultiplier = 2f;
+                atkMultiplier = 1.5f;
+                resistancesMultiplier = 1.5f;
                 defIgn += 100;
-                defPen += 10;
+                defPen += 15;
                 resIgn += 100;
-                resPen += 10;
-                speed += 15;
+                resPen += 15;
+                speed += 10;
                 break;
             case 1:
-                statsMultiplier = 1f;
+                healthMultiplier = 1f;
+                atkMultiplier = 1f;
+                resistancesMultiplier = 1f;
                 break;
             case 2:
-                statsMultiplier = 0.75f;
+                healthMultiplier = 0.8f;
+                atkMultiplier = 0.95f;
+                resistancesMultiplier = 0.8f;
                 break;
             default:
-                statsMultiplier = 0.6f;
-                speed -= 15f;
+                healthMultiplier = 0.7f;
+                atkMultiplier = 0.92f;
+                resistancesMultiplier = 0.7f;
                 break;
         }
 
-        attackDamage = (int)(attackDamage * statsMultiplier);
-        maxHealth = (int)(maxHealth * statsMultiplier);
-        def *= statsMultiplier;
-        res *= statsMultiplier;
+        maxHealth = (int)(maxHealth * healthMultiplier);
+        attackDamage = (int)(attackDamage * atkMultiplier);
+        def *= resistancesMultiplier;
+        res *= resistancesMultiplier;
     }
 
     public virtual void Update()
     {
         if (currentHealth <= 0) return;
         UpdateCharacterCooldowns();
-
         GetCharacterMovement();
         GetCharacterActions();
     }

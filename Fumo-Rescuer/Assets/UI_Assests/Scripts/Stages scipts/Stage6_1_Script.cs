@@ -17,6 +17,19 @@ public class Stage6_1_Script : MonoBehaviour
     [SerializeField]
     private GameObject BlackScreenOverlay;
 
+
+    private void Start()
+    {
+        if (PlayerPrefs.GetInt("Difficulty", 0) >= 3)
+        {
+            EnemyBehavior_Sentinel[] Sentinels = GameObject.FindObjectsOfType<EnemyBehavior_Sentinel>();
+            foreach (EnemyBehavior_Sentinel sentinel in Sentinels)
+            {
+                sentinel.moveDistance *= 1.4f;
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

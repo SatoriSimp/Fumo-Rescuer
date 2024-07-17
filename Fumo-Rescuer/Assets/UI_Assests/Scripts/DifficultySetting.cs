@@ -58,7 +58,7 @@ public class DifficultySetting : MonoBehaviour
         DifficultyText.text = txt;
         DifficultyText.color = textColor;
 
-        LowerDiff.enabled = gameDiff > 1 || (gameDiff > 0 && playerProgress >= 7);
-        AddDiff.enabled = gameDiff < 3;
+        LowerDiff.enabled = gameDiff > 0;
+        AddDiff.enabled = gameDiff < 2 || (gameDiff < 3 && playerProgress >= 7);
     }
 }
